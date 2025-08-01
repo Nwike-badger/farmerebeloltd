@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+
 @import "tailwindcss";
-:root {
-   body {
+
+@theme {
+  --font-commissioner: "Commissioner", sans-serif;
+}
+
+body {
   font-family: 'Commissioner', sans-serif;
 }
+
+/* :root {
+   body {
+  font-family: 'Commissioner', sans-serif;
+} */
 
   /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -73,4 +84,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   } */
-}
+

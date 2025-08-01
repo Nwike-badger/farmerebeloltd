@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from "../assets/Screenshot_2025-07-01_at_9.51.08_pm-removebg-preview.png";
+import { ChevronDown } from 'lucide-react';
 
 const MenuIcon = () => (
   <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -18,60 +19,126 @@ const CloseIcon = () => (
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(''); 
+  const [activeItem, setActiveItem] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const navItems = [
-    'Home',
-    'About Us',
-    'Our Produce',
-    'Contact Us',
+  const navItems = ['Home', 'Our Produce', 'Contact Us'];
+
+  const aboutDropdownItems = [
+    'Our Story',
+    'Mission',
+    'Meet Our Founder',
+    'Community Impact',
+    'Media Gallery',
   ];
 
   const handleNavItemClick = (item) => {
     setActiveItem(item);
     setIsMenuOpen(false);
+    setIsDropdownOpen(false);
   };
 
   return (
-    <nav className="bg-white sticky top-0 z-50 shadow-md font-commissioner">
-      <div className="flex items-center justify-between py-[24px] pl-[80px] pr-[140px]">
-        {/* Logo */}
+    <nav className="bg-white sticky top-0 z-50 font-commissioner">
+      <div className="flex items-center justify-between py-[24px] px-4 md:px-8 lg:pl-[80px] lg:pr-[200px]">
         <a href="#" className="flex-shrink-0">
           <img
             src={Logo}
             alt="Company Logo"
-            className="w-[219.61px] h-[86px] object-contain"
+            className="w-[120px] md:w-[150px] lg:w-[180.61px] h-auto object-contain"
           />
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-[120px]">
-          {navItems.map((item) => {
-            const isActive = activeItem === item;
-            return (
-              <a
-                key={item}
-                href="#"
-                onClick={() => handleNavItemClick(item)}
-                className={`
-                  relative text-black text-[20px] leading-[24px]
-                  font-${isActive ? 'bold' : 'normal'}
-                  cursor-pointer transition-all duration-200
-                  after:content-['']
-                  after:absolute
-                  after:-bottom-[4px]
-                  after:left-0
-                  after:h-[2px]
-                  after:w-[40px]
-                  after:bg-green-600
-                  after:transition-transform
-                  ${isActive ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
-                `}
-              >
-                {item}
-              </a>
-            );
-          })}
+          {/* Home */}
+          <a
+            href="#"
+            onClick={() => handleNavItemClick('Home')}
+            className={`
+              relative text-black text-[18px] leading-[24px]
+              font-${activeItem === 'Home' ? 'bold' : 'normal'}
+              cursor-pointer transition-all duration-200
+              after:content-['']
+              after:absolute
+              after:-bottom-[4px]
+              after:left-0
+              after:h-[2px]
+              after:w-[30px]
+              after:bg-green-600
+              after:transition-transform
+              ${activeItem === 'Home' ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
+            `}
+          >
+            Home
+          </a>
+
+          {/* About Us Dropdown */}
+          <div className="relative">
+            <div
+  onClick={() => {
+    setIsDropdownOpen(!isDropdownOpen);
+    setActiveItem('About Us');
+  }}
+  className={`
+    relative flex items-center text-black text-[18px] leading-[24px]
+    font-${activeItem === 'About Us' ? 'bold' : 'normal'}
+    cursor-pointer transition-all duration-200
+    after:content-['']
+    after:absolute
+    after:-bottom-[4px]
+    after:left-0
+    after:h-[2px]
+    after:w-[30px]
+    after:bg-green-600
+    after:transition-transform
+    ${activeItem === 'About Us' ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
+  `}
+>
+  About Us
+  <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+</div>
+
+            {isDropdownOpen && (
+  <div className="absolute left-0 mt-3 py-6 px-5 w-[350px] bg-white border border-neutral-300  rounded-md z-50">
+    {aboutDropdownItems.map((subItem) => (
+      <a
+        key={subItem}
+        href="#"
+        onClick={() => handleNavItemClick(subItem)}
+        className="block px-2 py-2 my-3  text-base text-black text-[18px] hover:bg-green-100 rounded"
+      >
+        {subItem}
+      </a>
+    ))}
+  </div>
+)}
+          </div>
+
+          {/* Other nav items */}
+          {navItems.slice(1).map((item) => (
+            <a
+              key={item}
+              href="#"
+              onClick={() => handleNavItemClick(item)}
+              className={`
+                relative text-black text-[18px] leading-[24px]
+                font-${activeItem === item ? 'bold' : 'normal'}
+                cursor-pointer transition-all duration-200
+                after:content-['']
+                after:absolute
+                after:-bottom-[4px]
+                after:left-0
+                after:h-[2px]
+                after:w-[30px]
+                after:bg-green-600
+                after:transition-transform
+                ${activeItem === item ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
+              `}
+            >
+              {item}
+            </a>
+          ))}
         </div>
 
         {/* Mobile Toggle */}
@@ -88,17 +155,52 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-gray-50 px-4 pt-2 pb-4 space-y-1 font-commissioner`}>
-        {navItems.map((item) => (
+      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-white px-4 py-4 space-y-4 font-commissioner`}>
+        {/* Home */}
+        <a
+          href="#"
+          onClick={() => handleNavItemClick('Home')}
+          className={`block text-black text-base px-3 py-2 rounded-md ${
+            activeItem === 'Home' ? 'font-bold border-b-2 border-green-600' : 'font-normal'
+          }`}
+        >
+          Home
+        </a>
+
+        {/* About Us Dropdown */}
+        <div>
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex items-center w-full text-left text-black text-base font-normal px-3 py-2 rounded-md"
+          >
+            About Us
+            <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+          </button>
+          {isDropdownOpen && (
+            <div className="pl-4 mt-1 space-y-1">
+              {aboutDropdownItems.map((subItem) => (
+                <a
+                  key={subItem}
+                  href="#"
+                  onClick={() => handleNavItemClick(subItem)}
+                  className="block text-black text-sm py-1 px-2 hover:bg-gray-100 rounded"
+                >
+                  {subItem}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Other nav items */}
+        {navItems.slice(1).map((item) => (
           <a
             key={item}
             href="#"
             onClick={() => handleNavItemClick(item)}
-            className={`
-              block text-black text-[20px] leading-[24px] px-3 py-2 rounded-md
-              ${activeItem === item ? 'font-bold border-b-2 border-green-600' : 'font-normal border-b-2 border-transparent'}
-              transition
-            `}
+            className={`block text-black text-base px-3 py-2 rounded-md ${
+              activeItem === item ? 'font-bold border-b-2 border-green-600' : 'font-normal'
+            }`}
           >
             {item}
           </a>
