@@ -17,7 +17,7 @@ const CloseIcon = () => (
   </svg>
 );
 
-const Navbar = () => {
+const Navbar2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,31 +34,23 @@ const Navbar = () => {
   ];
 
   const getNavItemClasses = (item) => {
-  const isActive = activeItem === item;
-  const isHovered = hoveredItem === item;
-  return `
-    relative text-black 
-    text-[16px] md:text-[16px] lg:text-[18px] 
-    leading-[20px] lg:leading-[24px]
-    font-${isActive || isHovered ? 'bold' : 'normal'}
-    cursor-pointer transition-all duration-200
-
-    after:content-['']
-    after:absolute
-    after:left-0
-    after:-bottom-1
-    after:h-[2px]
-    after:w-[30px]
-    after:bg-green-600
-    after:transition-transform
-    after:duration-300
-    after:origin-left
-    ${isActive || isHovered ? 'after:scale-x-100' : 'after:scale-x-0'}
-  `;
-};
-
-
-
+    const isActive = activeItem === item;
+    const isHovered = hoveredItem === item;
+    return `
+      relative text-black text-[18px] leading-[24px]
+      font-${isActive || isHovered ? 'bold' : 'normal'}
+      cursor-pointer transition-all duration-200
+      after:content-['']
+      after:absolute
+      after:-bottom-[4px]
+      after:left-0
+      after:h-[2px]
+      after:w-[30px]
+      after:bg-green-600
+      after:transition-transform
+      ${isActive || isHovered ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
+    `;
+  };
 
   const handleNavItemClick = (item) => {
     setActiveItem(item);
@@ -73,12 +65,12 @@ const Navbar = () => {
           <img
             src={Logo}
             alt="Company Logo"
-            className="w-[120px] md:w-[120px] lg:w-[180.61px] h-auto object-contain"
+            className="w-[120px] md:w-[150px] lg:w-[180.61px] h-auto object-contain"
           />
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-[80px] lg:gap-[120px]">
+        <div className="hidden md:flex items-center gap-[120px]">
           {/* Home */}
           <a
             href="#"
@@ -155,8 +147,8 @@ const Navbar = () => {
         <a
           href="#"
           onClick={() => handleNavItemClick('Home')}
-          className={`block text-black text-base px-3 py-2 rounded-md  ${
-            activeItem === 'Home' ? 'font-bold border-2 border-green-600' : 'font-normal'
+          className={`block text-black text-base px-3 py-2 rounded-md ${
+            activeItem === 'Home' ? 'font-bold border-b-2 border-green-600' : 'font-normal'
           }`}
         >
           Home
@@ -178,9 +170,7 @@ const Navbar = () => {
                   key={subItem}
                   href="#"
                   onClick={() => handleNavItemClick(subItem)}
-                  className={`block text-black text-sm py-1 px-2 rounded
-  ${activeItem === subItem ? 'font-bold border-l-4 border-green-600' : 'hover:bg-gray-100'}
-`}
+                  className="block text-black text-sm py-1 px-2 hover:bg-gray-100 rounded"
                 >
                   {subItem}
                 </a>
@@ -196,7 +186,7 @@ const Navbar = () => {
             href="#"
             onClick={() => handleNavItemClick(item)}
             className={`block text-black text-base px-3 py-2 rounded-md ${
-              activeItem === item ? 'font-bold border-2 border-green-600' : 'font-normal'
+              activeItem === item ? 'font-bold border-b-2 border-green-600' : 'font-normal'
             }`}
           >
             {item}
@@ -207,4 +197,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
