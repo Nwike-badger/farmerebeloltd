@@ -21,6 +21,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState('');
 
   const navItems = ['Home', 'Our Produce', 'Contact Us'];
 
@@ -31,6 +32,25 @@ const Navbar = () => {
     'Community Impact',
     'Media Gallery',
   ];
+
+  const getNavItemClasses = (item) => {
+    const isActive = activeItem === item;
+    const isHovered = hoveredItem === item;
+    return `
+      relative text-black text-[18px] leading-[24px]
+      font-${isActive || isHovered ? 'bold' : 'normal'}
+      cursor-pointer transition-all duration-200
+      after:content-['']
+      after:absolute
+      after:-bottom-[4px]
+      after:left-0
+      after:h-[2px]
+      after:w-[30px]
+      after:bg-green-600
+      after:transition-transform
+      ${isActive || isHovered ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
+    `;
+  };
 
   const handleNavItemClick = (item) => {
     setActiveItem(item);
@@ -55,20 +75,9 @@ const Navbar = () => {
           <a
             href="#"
             onClick={() => handleNavItemClick('Home')}
-            className={`
-              relative text-black text-[18px] leading-[24px]
-              font-${activeItem === 'Home' ? 'bold' : 'normal'}
-              cursor-pointer transition-all duration-200
-              after:content-['']
-              after:absolute
-              after:-bottom-[4px]
-              after:left-0
-              after:h-[2px]
-              after:w-[30px]
-              after:bg-green-600
-              after:transition-transform
-              ${activeItem === 'Home' ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
-            `}
+            onMouseEnter={() => setHoveredItem('Home')}
+            onMouseLeave={() => setHoveredItem('')}
+            className={getNavItemClasses('Home')}
           >
             Home
           </a>
@@ -76,43 +85,32 @@ const Navbar = () => {
           {/* About Us Dropdown */}
           <div className="relative">
             <div
-  onClick={() => {
-    setIsDropdownOpen(!isDropdownOpen);
-    setActiveItem('About Us');
-  }}
-  className={`
-    relative flex items-center text-black text-[18px] leading-[24px]
-    font-${activeItem === 'About Us' ? 'bold' : 'normal'}
-    cursor-pointer transition-all duration-200
-    after:content-['']
-    after:absolute
-    after:-bottom-[4px]
-    after:left-0
-    after:h-[2px]
-    after:w-[30px]
-    after:bg-green-600
-    after:transition-transform
-    ${activeItem === 'About Us' ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
-  `}
->
-  About Us
-  <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-</div>
+              onClick={() => {
+                setIsDropdownOpen(!isDropdownOpen);
+                setActiveItem('About Us');
+              }}
+              onMouseEnter={() => setHoveredItem('About Us')}
+              onMouseLeave={() => setHoveredItem('')}
+              className={getNavItemClasses('About Us') + ' flex items-center'}
+            >
+              About Us
+              <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            </div>
 
             {isDropdownOpen && (
-  <div className="absolute left-0 mt-3 py-6 px-5 w-[350px] bg-white border border-neutral-300  rounded-md z-50">
-    {aboutDropdownItems.map((subItem) => (
-      <a
-        key={subItem}
-        href="#"
-        onClick={() => handleNavItemClick(subItem)}
-        className="block px-2 py-2 my-3  text-base text-black text-[18px] hover:bg-green-100 rounded"
-      >
-        {subItem}
-      </a>
-    ))}
-  </div>
-)}
+              <div className="absolute left-0 mt-3 py-6 px-5 w-[350px] bg-white border border-neutral-300 rounded-md z-50">
+                {aboutDropdownItems.map((subItem) => (
+                  <a
+                    key={subItem}
+                    href="#"
+                    onClick={() => handleNavItemClick(subItem)}
+                    className="block px-2 py-2 my-3 text-base text-black text-[18px] hover:bg-green-100 rounded"
+                  >
+                    {subItem}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Other nav items */}
@@ -121,20 +119,9 @@ const Navbar = () => {
               key={item}
               href="#"
               onClick={() => handleNavItemClick(item)}
-              className={`
-                relative text-black text-[18px] leading-[24px]
-                font-${activeItem === item ? 'bold' : 'normal'}
-                cursor-pointer transition-all duration-200
-                after:content-['']
-                after:absolute
-                after:-bottom-[4px]
-                after:left-0
-                after:h-[2px]
-                after:w-[30px]
-                after:bg-green-600
-                after:transition-transform
-                ${activeItem === item ? 'after:scale-x-100 after:origin-left' : 'after:scale-x-0'}
-              `}
+              onMouseEnter={() => setHoveredItem(item)}
+              onMouseLeave={() => setHoveredItem('')}
+              className={getNavItemClasses(item)}
             >
               {item}
             </a>
