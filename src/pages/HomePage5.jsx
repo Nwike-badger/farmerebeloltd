@@ -14,10 +14,6 @@ import logo5 from '../assets/logo 1.svg';
 import image6 from '../assets/Rectangle 1505.png';
 import image7 from '../assets/Vector(10).png';
 import image8 from '../assets/Rectangle 1506.png';
-import image9 from '../assets/Palm Fruits Image.png'
-import image10 from '../assets/Rectangle 1511.png'
-import image11 from '../assets/Rectangle 1513.png'
-import image12 from '../assets/Rectangle 1512.png'
 
 
 
@@ -39,7 +35,7 @@ const AnimatedStat = ({ number, suffix, children }) => {
 };
 
 
-const HomePage = () => {
+const HomePage5 = () => {
   
   const backgrounds = [image1, image2, image3];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,51 +60,47 @@ const HomePage = () => {
     <div className="relative w-screen min-h-screen font-commissioner">
       <Navbar />
 
-  
-              <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center px-4 overflow-hidden">
-                
-                {/* HERO BACKGROUND IMAGES */}
-                    <div className="absolute inset-0 z-10">
-                  {backgrounds.map((src, index) => (
-                    <img
-                      key={index}
-                      src={src}
-                      alt="Background"
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-                        index === currentIndex ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      style={{ zIndex: index === currentIndex ? 1 : 0 }}
-                    />
-                  ))}
-                  // add a blue or any color Overlay
-                  {/* <div className="absolute inset-0 bg-blue-900/50 z-10"></div> */}
-            </div>
+      <div className="fixed inset-0 z-0">
+        {backgrounds.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt="Background"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ zIndex: index === currentIndex ? 1 : 0 }}
+          />
+        ))}
+      </div>
 
+      <div className="relative z-30 w-full">
+        
+        <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center px-4">
+          <div className="absolute inset-0 bg-black/70 z-10"></div>
+          <div ref={heroRef} className={`relative z-20 transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+            <h1 className="font-bold text-4xl md:text-5xl lg:text-[70px] lg:leading-[77px] text-white drop-shadow-lg">
+              Welcome to{' '}
+              <span className="bg-[#00994D] px-2 rounded">
+                Farmer Ebelo Ltd.
+              </span>
+            </h1>
+            <p className="font-medium text-lg md:text-[20px] md:leading-[30px] text-white mt-6 max-w-3xl drop-shadow-md">
+              A leading oil palm plantation, rooted in the Heartbeat of the Nation, we bring you farm fresh palm produce, cultivated with care and delivered with heart.
+            </p>
+          </div>
+           
+          <button
+              onClick={() => window.location.href = '/about/our-story'}
+              className={`relative z-20 w-[200px] h-[50px] bg-[#00994D] text-white font-semibold text-lg md:text-[20px]
+                rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
+                mt-10 transition-all duration-700 delay-300 ease-in-out
+                hover:bg-[#007a3e] hover:scale-105 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+          >
+              Discover our farm
+          </button>
 
-                {/* TEXT CONTENT */}
-                <div ref={heroRef} className={`relative z-20 transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-                  <h1 className="font-bold text-4xl md:text-5xl lg:text-[70px] lg:leading-[77px] text-white ">
-                      Welcome to{' '}
-                      <span className="text-black px-2 rounded">
-                        Farmer Ebelo Ltd.
-                      </span>
-                  </h1>
-                  <p className="font-medium text-lg md:text-[23px] md:leading-[30px] text-white mt-6 max-w-5xl drop-shadow-[0_3px_5px_rgba(0,0,0,0.8)]">
-                        A leading oil palm plantation, rooted in the Heartbeat of the Nation, we bring you farm fresh palm produce, cultivated with care and delivered with heart.
-                  </p>
-                </div>
-                
-                <button
-                  onClick={() => window.location.href = '/about/our-story'}
-                  className={`relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
-                    rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
-                    mt-10 transition-all duration-700 delay-300 ease-in-out
-                    hover:bg-gray-800 hover:scale-105 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-                >
-                  Discover our farm
-                </button>
-              </section>
-
+        </section>
 
         
         <section ref={partnersRef} className={`w-full bg-white pt-12 pb-4 transition-opacity duration-1000 ${partnersInView ? 'opacity-100' : 'opacity-0'}`}>
@@ -171,7 +163,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className='bg-white w-full pb-7'>
+        <section className='bg-white w-full pb-16'>
           {/* MODIFIED: Add ref and animation */}
           <div ref={growthBadgeRef} className={`px-4 py-2 mx-auto lg:mx-0 lg:ms-20 my-5 text-lg md:text-[1.375rem] bg-[#F9F9F9] text-[#00994D] rounded-2xl w-fit font-semibold transition-all duration-500 ${growthBadgeInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
               Our Growth in Numbers
@@ -191,69 +183,9 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section>
-  <div className="min-h-screen px-5 mb-10">
-    <div className="text-[40px] text-[#00994D] font-bold font-commissioner ms-15 mb-5">
-      what we produce
-    </div>
-    <div className="max-w-[82rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      {/* Card 1 */}
-      <div className="relative group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-        <img
-          src={image9}
-          alt="Nature"
-          className="w-full object-cover"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="text-white text-4xl font-semibold">Palm Fruits</span>
-        </div>
       </div>
-
-      {/* Card 2 */}
-      <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 space-y-5 ">
-        {/* Top two images in flex */}
-        <div className="flex gap-5 mb-7">
-  {/* First Image with Unique Text */}
-  <div className="relative group w-1/2 overflow-hidden rounded-2xl">
-    <img src={image10} alt="Sludge" className="w-full object-cover" />
-    <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-      <span className="text-white text-4xl font-semibold">Palm Kernel Oil</span>
     </div>
-  </div>
-
-  {/* Second Image with Unique Text */}
-  <div className="relative group w-1/2 overflow-hidden rounded-2xl">
-    <img src={image11} alt="Palm Kernel Oil" className="w-full object-cover" />
-    <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-      <span className="text-white text-4xl font-semibold">Sludge</span>
-    </div>
-  </div>
-</div>
-
-
-        {/* Bottom image */}
-        <div className="relative group overflow-hidden rounded-2xl">
-          <img
-            src={image12}
-            alt="Nature"
-            className="w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="text-white text-4xl font-semibold">Palm Kernel Cake</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-      </div>
-    
   );
 };
 
-export default HomePage;
+export default HomePage5;
