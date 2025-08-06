@@ -18,6 +18,12 @@ import image9 from '../assets/Palm Fruits Image.png'
 import image10 from '../assets/Rectangle 1511.png'
 import image11 from '../assets/Rectangle 1513.png'
 import image12 from '../assets/Rectangle 1512.png'
+import image13 from '../assets/Vector(10) (copy).png';
+import image14 from '../assets/Rectangle 1464.png';
+import image15 from '../assets/Vector(3).svg'
+import image16 from '../assets/Group.svg'
+import image17 from '../assets/Vector(4).svg'
+
 
 
 
@@ -250,6 +256,116 @@ const HomePage = () => {
   </div>
 </section>
 
+
+<section className="relative px-6 py-16 bg-[#E2FFEF] text-center  mb-20">
+  {/* Text 1 */}
+  <h4 className="text-[32px] leading-none font-commissioner font-semibold text-[#00994D] mb-8">
+    Partner with us
+  </h4>
+
+  {/* Text 2 */}
+  <h2 className="text-[56px] leading-none font-commissioner font-bold text-black mb-8 max-w-xl mx-auto">
+    Partnering to Grow Value, Sustainably
+  </h2>
+
+  {/* Paragraph */}
+  <p className="text-[21px] leading-[32px] font-manrope font-medium text-black max-w-xl mx-auto mb-8">
+    At Farmer Ebelo Limited, we are building more than a farm. We are creating a scalable, full-cycle palm processing operation with long term growth and impact. Partner with us on this journey towards delivering economic impact.
+  </p>
+
+  {/* Button */}
+  <button
+    onClick={() => window.location.href = '/about/our-story'}
+    className="relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
+      rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
+       transition-all duration-700 ease-in-out hover:bg-gray-800 hover:scale-105"
+  >
+    Contact Us
+  </button>
+
+  {/* Decorative Bottom-Left Image */}
+  <img
+  src={image13}
+  alt="Decorative"
+  className="absolute -bottom-23 left-0 w-[160px] md:w-[180px] object-contain"
+/>
+</section>
+
+
+      <section
+          ref={beginningsRef}
+          className={`flex flex-col md:flex-row justify-between items-center max-w-[1568px] mx-auto bg-white py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-opacity duration-700 ${beginningsInView ? 'opacity-100' : 'opacity-0'}`}
+        >
+          {/* Text Content */}
+          <div className="basis-full md:basis-[54%]">
+            <div className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
+              Why Choose Us
+            </div>
+
+            <h2 className="text-[43px] leading-none font-commissioner font-bold text-black mb-8 max-w-2xl">
+              Rooted in Tradition, Powered by Quality.
+            </h2>
+
+            <p className="text-[20px] leading-[32px] font-manrope font-medium text-black max-w-2xl mb-8">
+              Farmer Ebelo Limited draws on years of local farming experience to produce palm-based goods that stand out for their quality and consistency.
+               From careful harvesting to precise processing, our promise is premium, locally-sourced excellent palm.
+            </p>
+          </div>
+
+          {/* Image */}
+          <div className="basis-full md:basis-[45%] relative">
+            <img
+              src={image14}
+              alt="Close-up of freshly harvested palm fruits."
+              className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
+            />
+          </div>
+      </section>
+
+
+
+                    <section className='bg-white w-full pb-7'>
+          {/* MODIFIED: Add ref and animation */}
+          
+
+          <div className="flex flex-col lg:flex-row w-full ">
+                  <div>
+                    <img
+                        src={image15}
+                        alt="Close-up of freshly harvested palm fruits."
+                        className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
+                  />
+              
+                  <h4 className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
+                        Rooted in Experience
+                  </h4>
+                  </div>
+              
+              <div>
+                    <img
+                        src={image16}
+                        alt="Close-up of freshly harvested palm fruits."
+                        className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
+                  />
+              
+                  <h4 className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
+                        Rooted in Experience
+                  </h4>
+                  </div>
+
+              <div>
+                    <img
+                        src={image17}
+                        alt="Close-up of freshly harvested palm fruits."
+                        className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
+                  />
+              
+                  <h4 className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
+                        Rooted in Experience
+                  </h4>
+                  </div>
+          </div>
+        </section>
 
       </div>
     
