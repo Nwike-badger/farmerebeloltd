@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup'; 
 
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import image1 from '../assets/Group 114.png';
 import image2 from '../assets/Group 114(1).png';
 import image3 from '../assets/Group 114(2).png';
@@ -23,6 +24,13 @@ import image14 from '../assets/Rectangle 1464.png';
 import image15 from '../assets/Vector(3).svg'
 import image16 from '../assets/Group.svg'
 import image17 from '../assets/Vector(4).svg'
+import image18 from '../assets/Group 1000003906.png'
+import image19 from '../assets/Rectangle 1471.png'
+import image20 from '../assets/Rectangle 1472.png'
+import image21 from '../assets/Rectangle 1473.png'
+import image22 from '../assets/Group 1000003916.svg'
+import image23 from '../assets/Group 1000003917.svg'
+
 
 
 
@@ -86,7 +94,7 @@ const HomePage = () => {
                       style={{ zIndex: index === currentIndex ? 1 : 0 }}
                     />
                   ))}
-                  // add a blue or any color Overlay
+                  {/* add a blue or any color Overlay */}
                   {/* <div className="absolute inset-0 bg-blue-900/50 z-10"></div> */}
             </div>
 
@@ -324,48 +332,148 @@ const HomePage = () => {
 
 
 
-                    <section className='bg-white w-full pb-7'>
-          {/* MODIFIED: Add ref and animation */}
-          
+      <section className="bg-white  pb-12 px-18">
+  <div className="max-w-[1568px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      {/* Card 1 */}
+      <div className="bg-[#F9F9F9] p-6 rounded-2xl flex flex-col h-full">
+        <div className="w-[70px] h-[70px] bg-white rounded-full p-2 mb-6 shadow">
+          <img
+            src={image15}
+            alt="Logo 1"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
+        <h4 className="text-[28px] text-[#00994D] font-semibold font-commissioner mb-4">
+          Rooted in Experience
+        </h4>
+        <p className="text-[18px] leading-[30px] font-manrope font-medium text-black">
+          With years of hands-on experience, we bring practical expertise to every stage of palm cultivation and processing.
+        </p>
+      </div>
 
-          <div className="flex flex-col lg:flex-row w-full ">
-                  <div>
-                    <img
-                        src={image15}
-                        alt="Close-up of freshly harvested palm fruits."
-                        className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
-                  />
-              
-                  <h4 className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
-                        Rooted in Experience
-                  </h4>
-                  </div>
-              
-              <div>
-                    <img
-                        src={image16}
-                        alt="Close-up of freshly harvested palm fruits."
-                        className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
-                  />
-              
-                  <h4 className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
-                        Rooted in Experience
-                  </h4>
-                  </div>
+      {/* Card 2 */}
+      <div className="bg-[#F9F9F9] p-6 rounded-2xl flex flex-col h-full">
+        <div className="w-[70px] h-[70px] bg-white rounded-full p-2 mb-6 shadow">
+          <img
+            src={image16}
+            alt="Logo 2"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
+        <h4 className="text-[28px] text-[#00994D] font-semibold font-commissioner mb-4">
+          Quality Assurance
+        </h4>
+        <p className="text-[18px] leading-[30px] font-manrope font-medium text-black">
+          From harvest to processing, we maintain rigorous quality control to deliver products you can trust.
+        </p>
+      </div>
 
-              <div>
-                    <img
-                        src={image17}
-                        alt="Close-up of freshly harvested palm fruits."
-                        className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
-                  />
-              
-                  <h4 className="text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
-                        Rooted in Experience
-                  </h4>
-                  </div>
-          </div>
-        </section>
+      {/* Card 3 */}
+      <div className="bg-[#F9F9F9] p-6 rounded-2xl flex flex-col h-full">
+        <div className="w-[70px] h-[70px] bg-white rounded-full p-2 mb-6 shadow">
+          <img
+            src={image17}
+            alt="Logo 3"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
+        <h4 className="text-[28px] text-[#00994D] font-semibold font-commissioner mb-4">
+          Built on Community
+        </h4>
+        <p className="text-[18px] leading-[30px] font-manrope font-medium text-black">
+          We believe growth is shared. From job creation to community empowerment, our work uplifts the people that host us.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section className='px-18 pb-7'>
+  <div className="max-w-[1568px] mx-auto">
+    <img
+            src={image18}
+            alt="Logo 2"
+            className="w-full h-full object-contain"
+          />
+  </div>
+</section>
+
+<section className="bg-white  pb-5 px-18">
+  <div className="max-w-[1568px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      
+      {/* Card 1 */}
+      <div className="flex flex-col h-full">
+        <div className="">
+          <img
+            src={image19}
+            alt="Logo 1"
+            className="w-full h-full object-contain "
+          />
+        </div>
+      
+      </div>
+
+      {/* Card 2 */}
+      <div className="flex flex-col h-full">
+        <div className="">
+          <img
+            src={image20}
+            alt="Logo 1"
+            className="w-full h-full object-contain "
+          />
+        </div>
+      
+      </div>
+
+      {/* Card 3 */}
+      <div className="flex flex-col h-full">
+        <div className="">
+          <img
+            src={image21}
+            alt="Logo 1"
+            className="w-full h-full object-contain l"
+          />
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="relative bg-white py-16 px-4 text-center">
+  {/* Top-left quote image */}
+  <img
+    src={image22}
+    alt="Opening quote"
+    className="absolute w-6 h-6 md:w-[52px] md:h-[48px] object-contain
+               top-4 left-4 md:top-[4.25rem] md:left-44"
+  />
+
+  {/* Top-right quote image */}
+  <img
+    src={image23}
+    alt="Closing quote"
+    className="absolute w-6 h-6 md:w-[52px] md:h-[48px] object-contain
+               top-4 right-4 md:top-[4.25rem] md:right-44"
+  />
+
+  {/* Quote Text */}
+  <h3 className="text-[20px] sm:text-[28px] md:text-[58px] leading-snug font-commissioner font-semibold text-black max-w-5xl mx-auto px-4">
+    We do not just plant palm. We plant a dream for our people and our land.
+  </h3>
+</section>
+
+
+<section>
+  <Footer />
+</section>
+
+
 
       </div>
     
