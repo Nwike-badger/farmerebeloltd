@@ -1,6 +1,8 @@
 // src/App.jsx
 import React from 'react';
 import HomePage from './pages/HomePage';
+import OurStory from './pages/OurStory'
+
 
 const App = () => {
   return (
@@ -11,7 +13,7 @@ const App = () => {
         <p className="mt-4 text-center text-gray-600"></p>
       </main> */
       
-      <HomePage />}
+      <OurStory />}
 
     </div>
   );
