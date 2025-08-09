@@ -2,6 +2,8 @@
 import React from 'react';
 import HomePage from './pages/HomePage';
 import OurStory from './pages/OurStory'
+import OurProduce from './pages/OurProduce';
+import MissionAndVision from './pages/MissionAndVision';
 
 
 const App = () => {
@@ -13,7 +15,7 @@ const App = () => {
         <p className="mt-4 text-center text-gray-600"></p>
       </main> */
       
-      <OurStory />}
+      <MissionAndVision />}
 
     </div>
   );

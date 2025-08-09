@@ -49,26 +49,28 @@ const OurStory = () => {
                 
                 className={`flex flex-col md:flex-row justify-between items-center max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-opacity duration-700 `}
               >
-                <div className="basis-full md:basis-[54%] text-center md:text-left">
-                  <div className="text-2xl md:text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
-                    Why Choose Us
+                <div className="basis-full md:basis-[60%] text-center md:text-left">
+                  <div className="text-2xl md:text-[47px] text-[#00994D] font-semibold font-commissioner mb-5">
+                    Our Story
                   </div>
       
-                  <h2 className="text-3xl md:text-[43px] leading-tight md:leading-none font-commissioner font-bold text-black mb-6 max-w-2xl mx-auto md:mx-0">
-                    Rooted in Tradition, Powered by Quality.
-                  </h2>
-      
-                  <p className="text-base md:text-[20px] leading-relaxed md:leading-[32px] font-manrope font-medium text-black max-w-2xl mb-8 mx-auto md:mx-0">
-                    Farmer Ebelo Limited draws on years of local farming experience to produce palm-based goods that stand out for their quality and consistency.
-                     From careful harvesting to precise processing, our promise is premium, locally-sourced excellent palm.
+                  <p className='text-base md:text-[22px] leading-relaxed md:leading-[32px] font-manrope font-medium text-[#383838] max-w-2xl mb-8 mx-auto md:mx-0'>
+                    Farmer Ebelo Limited  is an indigenous agricultural company, ensconced in the riverine swamps of Edo State, with a bold mission to transform palm farming in Nigeria.
+                  </p>
+                  <p className='text-base md:text-[22px] leading-relaxed md:leading-[32px] font-manrope font-medium text-[#383838] max-w-2xl mb-8 mx-auto md:mx-0'>
+                    We began as a small farm with big dreams. Today, with the support of the Edo State Government and the visionary Edo State Oil Palm Programme, we now boast of a thriving 5,000 hectare palm cultivation enterprise. Our core products <span className='text-[#00994D]'>include Palm Kernel Oil, Palm Kernel Cake (PKC), Palm Fruits and Sludge</span>; all processed with precision, care, and purpose. 
+                  </p>
+  
+                  <p className="text-base md:text-[22px] leading-relaxed md:leading-[32px] font-manrope font-medium text-[#383838] max-w-2xl mb-8 mx-auto md:mx-0">
+                    Driven by a zero-waste philosophy and a deep commitment to our community, we aim to create lasting value not just for our investors and partners, but for the people of Edo State. Guided by the solid leadership and vision of our founder, we  grow with heart - for our people, for progress, and for Nigeria at large.
                   </p>
                 </div>
       
-                <div className="basis-full md:basis-[45%] relative">
+                <div className="basis-full md:basis-[35%] relative ">
                   <img
                     src={image3}
                     alt="Close-up of freshly harvested palm fruits."
-                    className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
+                    className="w-full h-auto max-h-[600px] rounded-xl object-cover shadow-lg"
                   />
                 </div>
             </section>
