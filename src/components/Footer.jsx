@@ -1,4 +1,6 @@
 import React from 'react';
+// Import NavLink to handle client-side routing
+import { NavLink } from 'react-router-dom';
 import Logo from "../assets/Screenshot_2025-07-01_at_9.51.08_pm-removebg-preview.png";
 import image2 from "../assets/Group 50.svg";
 import image3 from '../assets/Vector(6).svg';
@@ -13,13 +15,14 @@ const Footer = () => {
         
         {/* Logo and Description */}
         <div className="max-w-sm">
-          <a href="#" className="inline-block mb-4">
+          {/* Changed to NavLink, routes to Home */}
+          <NavLink to="/" className="inline-block mb-4">
             <img
               src={Logo}
               alt="Company Logo"
               className="w-[160.875px] h-[63px] object-contain"
             />
-          </a>
+          </NavLink>
           <p className="font-manrope  text-[16px] leading-[16px]">
             Farmer Ebelo Limited is a Nigerian agricultural company with interests in palm cultivation and processing. 
             Our products include palm fruits, palm kernel cake, palm oil, palm kernel oil, and sludge.
@@ -38,10 +41,11 @@ const Footer = () => {
         <div>
           <h4 className="font-commissioner font-semibold text-[20px] mb-4">Company</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="font-manrope  text-[16px] leading-[16px]">Home</a></li>
-            <li><a href="#" className="font-manrope  text-[16px] leading-[16px]">About Us</a></li>
-            <li><a href="#" className="font-manrope  text-[16px] leading-[16px]">Gallery</a></li>
-            <li><a href="#" className="font-manrope  text-[16px] leading-[16px]">Contact Us</a></li>
+            {/* --- Routes added below --- */}
+            <li><NavLink to="/" className="font-manrope  text-[16px] leading-[16px]">Home</NavLink></li>
+            <li><NavLink to="/about" className="font-manrope  text-[16px] leading-[16px]">About Us</NavLink></li>
+            <li><NavLink to="/about/media-gallery" className="font-manrope  text-[16px] leading-[16px]">Gallery</NavLink></li>
+            <li><NavLink to="/contact-us" className="font-manrope  text-[16px] leading-[16px]">Contact Us</NavLink></li>
           </ul>
         </div>
 
@@ -49,16 +53,18 @@ const Footer = () => {
         <div>
           <h4 className="font-commissioner font-semibold text-[20px] mb-4">Legal & Compliance</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="font-manrope  text-[16px] leading-[16px]">Privacy Policy</a></li>
-            <li><a href="#" className="font-manrope  text-[16px] leading-[16px]">Terms of Use</a></li>
+            {/* --- Routes added below --- */}
+            <li><NavLink to="/privacy-policy" className="font-manrope  text-[16px] leading-[16px]">Privacy Policy</NavLink></li>
+            <li><NavLink to="/terms-of-use" className="font-manrope  text-[16px] leading-[16px]">Terms of Use</NavLink></li>
           </ul>
         </div>
 
         {/* Contact Info + Socials */}
         <div>
           <h4 className="font-commissioner font-semibold text-[20px] mb-4">Contact</h4>
-          <p className="font-manrope  text-[16px] leading-[16px] mb-2">farmerebelo@gmail.com</p>
-          <p className="font-manrope  text-[16px] leading-[16px] mb-4">+234 (0) 807 678 8888</p>
+          {/* These are external links, so they correctly remain as <a> tags */}
+          <p className="font-manrope  text-[16px] leading-[16px] mb-2"><a href="mailto:farmerebelo@gmail.com">farmerebelo@gmail.com</a></p>
+          <p className="font-manrope  text-[16px] leading-[16px] mb-4"><a href="tel:+2348076788888">+234 (0) 807 678 8888</a></p>
 
           {/* Social Icons */}
           <div className="flex gap-10 mt-30">

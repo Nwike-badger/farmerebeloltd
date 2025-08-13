@@ -26,57 +26,67 @@ const OurProduce = () => {
   
   return (
     <div className="relative w-screen min-h-screen font-commissioner">
-      <Navbar />
+      
 
       {/* Background Section */}
-      <section className="relative min-h-[100vh] pb-16">
-              {/* Background Image */}
-              <img
-                src={image1}
-                alt="Background"
-                className="absolute inset-0 w-full h-full object-cover -z-10"
-              />
-      
-              <div className="max-w-6xl  px-21 pt-32 md:pt-40">
-                {/* h5 with underline */}
-                <div className="relative mb-10 w-fit">
-                  <h5 className="text-[24px] leading-[32px] font-normal text-white">
-                    Sustainability
-                  </h5>
-                  <img
-                    src={image2}
-                    alt="Stylish underline"
-                    className="absolute -bottom-3 left-0 w-[150px] rotate[-9deg]"
-                  />
-                </div>
-      
-                {/* h2 heading */}
-                <h2 className="text-[32px] md:text-[45px] font-bold leading-[48px] text-white mb-10 max-w-2xl">
-                  Cultivating Prosperity & Agricultural Self Sufficiency
-                </h2>
-      
-                {/* paragraph */}
-                <p className="text-[20px] md:text-[25px] leading-[32px] font-medium text-white max-w-3xl">
-                  At Farmer Ebelo Limited, our approach to sustainability goes beyond meeting farming and processing standards. We are driven by a deep commitment to contribute to, and positively impact the development of our host community and the agricultural landscape at large.
-                </p>
-              </div>
-      </section>
+      <section className="relative min-h-[90vh] md:min-h-screen flex items-center text-white">
+  {/* The background image and overlay are the same as before, as they improve readability on all screen sizes */}
+  <div className="absolute inset-0 bg-black -z-20">
+    <img
+      src={image1}
+      alt="Background"
+      className="w-full h-full object-cover opacity-60"
+    />
+  </div>
 
-      <section className="bg-gray-100 py-12">
-            <div className="max-w-8xl mx-auto px-19 ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 justify-items-start">
-                {cards.map((card, index) => (
-                  <OurProduceCards
-                    key={index}
-                    image={card.image}
-                    text={card.text}
-                    onClick={() => console.log(`Clicked card ${index + 1}`)}
-                  />
-                ))}
-              </div>
-            </div>
-      </section>
+  {/* Content Container */}
+  {/* CHANGED: Using mobile-first padding, then restoring your desktop values at the `md` breakpoint. */}
+  <div className="max-w-6xl mx-auto w-full px-4 md:px-21 pt-24 md:pt-32 lg:pt-40">
+    {/* h5 with underline */}
+    <div className="relative mb-6 md:mb-10 w-fit">
+      {/* CHANGED: Mobile font size is `text-xl`, desktop is your original `text-[24px]` */}
+      <h5 className="text-xl md:text-[24px] font-normal">
+        Sustainability
+      </h5>
+      <img
+        src={image2}
+        alt="Stylish underline"
+        className="absolute -bottom-2 md:-bottom-3 left-0 w-[100px] md:w-[150px] -[rotate:6deg]"
+      />
+    </div>
 
+    {/* h2 heading */}
+    {/* CHANGED: Mobile font size is `text-3xl`, desktop is your original `md:text-[45px]` */}
+    <h2 className="text-3xl md:text-[45px] font-bold leading-tight md:leading-snug mb-6 md:mb-10 max-w-2xl">
+      Cultivating Prosperity & Agricultural Self Sufficiency
+    </h2>
+
+    {/* paragraph */}
+    {/* CHANGED: Mobile font size is `text-lg`, desktop is your original `md:text-[25px]` */}
+    <p className="text-lg md:text-[25px] leading-relaxed md:leading-[32px] font-light max-w-3xl">
+      At Farmer Ebelo Limited, our approach to sustainability goes beyond meeting farming and processing standards. We are driven by a deep commitment to contribute to, and positively impact the development of our host community and the agricultural landscape at large.
+    </p>
+  </div>
+</section>
+
+{/* REFINED SECTION 2: CARDS GRID (Desktop Spacing Preserved) */}
+
+<section className="bg-gray-100 py-12 md:py-16">
+  {/* CHANGED: Using mobile-first padding, then restoring your desktop `px-19` value. */}
+  <div className="max-w-8xl mx-auto px-4 md:px-19">
+    {/* CHANGED: Using a larger gap on mobile/tablet, then restoring your tighter `gap-2` for the desktop layout. */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-2 justify-items-start">
+      {cards.map((card, index) => (
+        <OurProduceCards
+          key={index}
+          image={card.image}
+          text={card.text}
+          onClick={() => console.log(`Clicked card ${index + 1}`)}
+        />
+      ))}
+    </div>
+  </div>
+</section>
       {/* <section
                 
                 className={`flex flex-col md:flex-row justify-between items-center max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-opacity duration-700 `}
@@ -124,7 +134,7 @@ const OurProduce = () => {
 
       
 
-      <Footer />
+      
     </div>
   );
 };

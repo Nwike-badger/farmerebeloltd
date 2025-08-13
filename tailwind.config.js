@@ -33,6 +33,10 @@ export default {
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
         'fade-in-right': 'fade-in-right 0.5s ease-out forwards',
       },
+      spacing: {
+        '19': '4.75rem', // 76px
+        '21': '5.25rem', // 84px
+      },
     },
   },
   plugins: [],

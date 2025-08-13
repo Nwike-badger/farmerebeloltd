@@ -76,7 +76,7 @@ const HomePage = () => {
 
   return (
     <div className="relative w-screen min-h-screen font-commissioner overflow-x-hidden">
-      <Navbar />
+      
 
   
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center px-4 overflow-hidden">
@@ -405,7 +405,7 @@ const HomePage = () => {
   </h3>
 </section>
 
-  <Footer/>
+  
 
   </div>
     

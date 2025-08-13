@@ -9,7 +9,7 @@ const OurStory = () => {
   
   return (
     <div className="relative w-screen min-h-screen font-commissioner">
-      <Navbar />
+      
 
       {/* Background Section */}
       <section className="relative min-h-[100vh] pb-16">
@@ -69,13 +69,13 @@ const OurStory = () => {
                 <div className="basis-full md:basis-[35%] relative ">
                   <img
                     src={image3}
-                    alt="Close-up of freshly harvested palm fruits."
+                    alt="Our Chairman."
                     className="w-full h-auto max-h-[600px] rounded-xl object-cover shadow-lg"
                   />
                 </div>
             </section>
 
-      <Footer />
+      
     </div>
   );
 };
