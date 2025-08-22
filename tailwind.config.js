@@ -37,6 +37,10 @@ export default {
         '19': '4.75rem', // 76px
         '21': '5.25rem', // 84px
       },
+      fontFamily: {
+        commissioner: ['var(--font-commissioner)'],
+        manrope: ['var(--font-manrope)'],
+      },
     },
   },
   plugins: [],

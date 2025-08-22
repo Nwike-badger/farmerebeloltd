@@ -14,7 +14,7 @@ const OurProduceCards = ({ image, text, onClick }) => {
       </p>
       <button
   onClick={() => window.location.href = '/about/our-story'}
-  className="flex items-center justify-center w-[180px] h-[50px] bg-black text-white font-semibold text-lg md:text-[18px] 
+  className="flex items-center justify-center w-[180px] h-[45px] bg-black text-white font-semibold text-lg md:text-[18px] 
              rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none 
              mt-2 mb-4 transition-transform hover:scale-105"
 >

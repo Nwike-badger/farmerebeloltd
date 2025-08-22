@@ -30,6 +30,7 @@ import image20 from '../assets/Rectangle 1472.png'
 import image21 from '../assets/Rectangle 1473.png'
 import image22 from '../assets/Group 1000003916.svg'
 import image23 from '../assets/Group 1000003917.svg'
+import HomepageCardWithIcon from '../components/HompageCardWithIcon';
 
 
 // MODIFIED: Made the paragraph width responsive to prevent awkward wrapping on small screens.
@@ -74,6 +75,37 @@ const HomePage = () => {
   const { ref: cardsRef, inView: cardsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
 
+  const cardsData = [
+  {
+    icon: image15,
+    alt: "Icon for Experience",
+    title: "Rooted in Experience",
+    text: "With years of hands-on experience, we bring practical expertise...",
+    delay: "animate-fade-in-up",
+    offset: "-translate-y-[1px]" 
+  
+    
+  },
+  {
+    icon: image16,
+    alt: "Icon for Quality",
+    title: "Quality Assurance",
+    text: "From harvest to processing, we maintain rigorous quality control...",
+    delay: "animate-fade-in-up delay-200",
+    offset: "translate-y-[5px]" 
+  },
+  {
+    icon: image17,
+    alt: "Icon for Community",
+    title: "Built on Community",
+    text: "We believe growth is shared. From job creation to community empowerment...",
+    delay: "animate-fade-in-up delay-[400ms]",
+     
+  },
+];
+
+
+
   return (
     <div className="relative w-screen min-h-screen font-commissioner overflow-x-hidden">
       
@@ -103,7 +135,7 @@ const HomePage = () => {
         <div ref={heroRef} className={`relative z-20 transition-all duration-700 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <h1 className="font-bold text-4xl md:text-5xl lg:text-[70px] lg:leading-[77px] text-white ">
               Welcome to{' '}
-              <span className="text-black px-2 rounded bg-white/90">
+              <span className="text-[#BCFFDE]">
                 Farmer Ebelo Ltd.
               </span>
           </h1>
@@ -117,9 +149,9 @@ const HomePage = () => {
           className={`relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
             rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
             mt-10 transition-all duration-700 delay-300 ease-in-out
-            hover:bg-gray-800 hover:scale-105 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+            hover:bg-black hover:scale-105 ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
         >
-          Discover our farm
+          Discover Our Farm
         </button>
       </section>
 
@@ -127,7 +159,7 @@ const HomePage = () => {
         {/* MODIFIED: Added a light background color for this section to stand out on mobile. Reduced padding and gaps for a tighter mobile view. */}
         <section ref={partnersRef} className={`w-full bg-[#F7F7F7] py-10 lg:pt-12 lg:pb-4 transition-opacity duration-1000 ${partnersInView ? 'opacity-100' : 'opacity-0'}`}>
             <div className='items-center flex flex-col justify-center w-full text-black px-4'>
-                <p className="font-medium text-center text-lg md:text-[20px] md:leading-[30px] max-w-3xl drop-shadow-md mb-8 lg:mb-10">
+                <p className="font-medium font-commissioner text-center text-lg md:text-[20px] md:leading-[30px] max-w-3xl drop-shadow-md mb-8 lg:mb-10">
                   We are supported by partners who believe in the value of local farming
                 </p>
                 <div className="flex flex-wrap justify-center items-center w-full max-w-4xl gap-y-6 gap-x-8 lg:gap-x-12 lg:gap-6 px-4 mb-5">
@@ -164,7 +196,7 @@ const HomePage = () => {
                             rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none 
                             mt-8 transition-transform hover:scale-105"
               >
-                    Explore the farm
+                    Explore the Farm
               </a>
             </div>
           </div>
@@ -191,7 +223,7 @@ const HomePage = () => {
               Our Growth in Numbers
           </div>
 
-          <div className="flex flex-col lg:flex-row w-full text-center">
+          <div className="flex flex-col lg:flex-row w-full text-center font-manrope">
               <div className="flex-1 p-8 lg:p-10 lg:pt-20 bg-[#2B4939] text-white">
                   <AnimatedStat number={1980} suffix="+">Total area of planted oil palm</AnimatedStat>
               </div>
@@ -310,48 +342,23 @@ const HomePage = () => {
       {/* MODIFIED: Fixed non-standard padding `px-18`. Made padding responsive. Reduced header font size on mobile. */}
       {/* DESKTOP ANIMATION: Added staggered fade-in-up animation to the cards. */}
       <section ref={cardsRef} className="bg-white pb-12 px-4 md:px-8 lg:px-16">
-        <div className="max-w-[1568px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            
-            <div className={`bg-[#F9F9F9] p-6 rounded-2xl flex flex-col h-full transition-all duration-500 ${cardsInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <div className="w-[70px] h-[70px] bg-white rounded-full p-2 mb-6 shadow">
-                <img src={image15} alt="Icon for Experience" className="w-full h-full object-contain rounded-full"/>
-              </div>
-              <h4 className="text-2xl md:text-[28px] text-[#00994D] font-semibold font-commissioner mb-4">
-                Rooted in Experience
-              </h4>
-              <p className="text-base md:text-[18px] leading-relaxed md:leading-[30px] font-manrope font-medium text-black">
-                With years of hands-on experience, we bring practical expertise to every stage of palm cultivation and processing.
-              </p>
-            </div>
+  <div className="max-w-[1568px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {cardsData.map((card, index) => (
+  <HomepageCardWithIcon
+    key={index}
+    icon={card.icon}
+    alt={card.alt}
+    title={card.title}
+    text={card.text}
+    delay={cardsInView ? card.delay : "opacity-0"}
+    offset={card.offset}          
+  />
+))}
+    </div>
+  </div>
+</section>
 
-            <div className={`bg-[#F9F9F9] p-6 rounded-2xl flex flex-col h-full transition-all duration-500 delay-200 ${cardsInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <div className="w-[70px] h-[70px] bg-white rounded-full p-2 mb-6 shadow">
-                <img src={image16} alt="Icon for Quality" className="w-full h-full object-contain rounded-full"/>
-              </div>
-              <h4 className="text-2xl md:text-[28px] text-[#00994D] font-semibold font-commissioner mb-4">
-                Quality Assurance
-              </h4>
-              <p className="text-base md:text-[18px] leading-relaxed md:leading-[30px] font-manrope font-medium text-black">
-                From harvest to processing, we maintain rigorous quality control to deliver products you can trust.
-              </p>
-            </div>
-
-            <div className={`bg-[#F9F9F9] p-6 rounded-2xl flex flex-col h-full transition-all duration-500 delay-[400ms] ${cardsInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <div className="w-[70px] h-[70px] bg-white rounded-full p-2 mb-6 shadow">
-                <img src={image17} alt="Icon for Community" className="w-full h-full object-contain rounded-full"/>
-              </div>
-              <h4 className="text-2xl md:text-[28px] text-[#00994D] font-semibold font-commissioner mb-4">
-                Built on Community
-              </h4>
-              <p className="text-base md:text-[18px] leading-relaxed md:leading-[30px] font-manrope font-medium text-black">
-                We believe growth is shared. From job creation to community empowerment, our work uplifts the people that host us.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
 {/* MODIFIED: Fixed non-standard padding `px-18` and made it responsive. */}
 <section className='px-4 md:px-8 lg:px-16 pb-7'>

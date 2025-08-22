@@ -28,10 +28,30 @@ const Navbar = () => {
   const location = useLocation();
 
   
+  // const getDesktopLinkClass = ({ isActive, isPending }) => {
+  //   const baseClass = `relative text-black text-[18px] leading-[24px] font-normal cursor-pointer
+  //    transition-all duration-200 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] 
+  //    after:w-[30px] after:bg-green-600 after:transition-transform after:duration-300 after:origin-left`;
+  //   return isPending 
+  // ? `${baseClass} after:scale-x-0` 
+  // : isActive 
+  // ? `${baseClass} font-bold after:scale-x-100` 
+  // : `${baseClass} hover:font-bold hover:after:scale-x-100 after:scale-x-0`;
+  // };
+
   const getDesktopLinkClass = ({ isActive, isPending }) => {
-    const baseClass = `relative text-black text-[18px] leading-[24px] font-normal cursor-pointer transition-all duration-200 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-[30px] after:bg-green-600 after:transition-transform after:duration-300 after:origin-left`;
-    return isPending ? `${baseClass} after:scale-x-0` : isActive ? `${baseClass} font-bold after:scale-x-100` : `${baseClass} hover:font-bold hover:after:scale-x-100 after:scale-x-0`;
-  };
+  const baseClass = `relative text-black text-[18px] leading-[24px]  cursor-pointer 
+  transition-all duration-200 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+   after:w-[30px] after:bg-green-600 after:transition-transform after:duration-300 after:origin-left`;
+  
+  return isPending
+    ? `${baseClass} after:scale-x-0`
+    : isActive
+    ? `${baseClass} font-bold after:scale-x-100` 
+    : `${baseClass} hover:font-bold hover:after:scale-x-100 after:scale-x-0`;
+};
+
+
 
   
   const isAboutActive = location.pathname.startsWith('/about');
@@ -53,7 +73,7 @@ const Navbar = () => {
             onMouseEnter={() => setIsDesktopDropdownOpen(true)}
             onMouseLeave={() => setIsDesktopDropdownOpen(false)}
           >
-            <div className="pb-4">
+            <div className="">
               <button className={`${getDesktopLinkClass({ isActive: isAboutActive })} flex items-center`}>
                 About Us
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isDesktopDropdownOpen ? 'rotate-180' : ''}`} />

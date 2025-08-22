@@ -52,7 +52,7 @@ const ContactUs = () => {
   <div className="basis-full md:basis-[35%] flex">
     <div className="bg-white rounded-xl shadow-lg p-8 max-w-lg w-full flex flex-col justify-center">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-        Send Us a Message
+        Contact Us
       </h2>
 
       <form className="space-y-5">
@@ -107,8 +107,10 @@ const ContactUs = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
-        >
+          className="flex items-center justify-center w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px] 
+                            rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none 
+                            mt-8 transition-transform hover:scale-105"
+              >
           Send Message
         </button>
       </form>
