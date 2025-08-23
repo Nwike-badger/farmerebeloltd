@@ -1,6 +1,6 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/Rectangle 1487.png';
+import image1 from '../assets/Group 61 (copy).png'
 import image2 from '../assets/Rectangle 1471.png';
 import image3 from '../assets/Rectangle 1489.png';
 import image4 from '../assets/Rectangle 1490.png';
@@ -18,7 +18,8 @@ import image15 from '../assets/Rectangle 1473.png';
 import image16 from '../assets/Rectangle 1502.png';
 import ProductDetailLayout from '../components/ProductDetailLayout';
 
-const CommunityImpact = () => {
+
+const PalmFruits = () => {
   
 
   return (
@@ -35,4 +36,4 @@ const CommunityImpact = () => {
   );
 };
 
-export default CommunityImpact;
+export default PalmFruits;

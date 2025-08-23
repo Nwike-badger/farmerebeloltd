@@ -12,6 +12,13 @@ import CommunityImpact from "./pages/CommunityImpact";
 import Media from "./pages/Media";
 import OurProduce from "./pages/OurProduce";
 import ContactUs from "./pages/ContactUs";
+import PalmFruits from "./pages/PalmFruits";
+import PalmKernel from "./pages/Palmkernel";
+import PalmKernelOil from "./pages/PalmKernelOil";
+import PalmOil from "./pages/PalmOil";
+import Sludge from "./pages/Sludge";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function Layout() {
   return (
@@ -28,6 +35,7 @@ function Layout() {
 export default function App() {
   return (
     <Router basename="/farmerebeloltd">
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -40,6 +48,12 @@ export default function App() {
             <Route path="media-gallery" element={<Media />} />
           </Route>
           <Route path="our-produce" element={<OurProduce />} />
+          <Route path="our-produce/palm-fruits" element={<PalmFruits />} />
+          <Route path="our-produce/palm-oil" element={<PalmOil />} />
+          <Route path="our-produce/palm-cake" element={<PalmKernel />} />
+          <Route path="our-produce/palm-kernel-oil" element={<PalmKernelOil />} />
+          <Route path="our-produce/sludge" element={<Sludge />} />
+
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="*" element={<div className="text-center p-20"><h1>404 - Page Not Found</h1></div>} />
         </Route>

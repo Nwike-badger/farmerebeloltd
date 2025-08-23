@@ -1,9 +1,10 @@
-// components/Card.jsx
+// components/OurProduceCards.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const OurProduceCards = ({ image, text, onClick }) => {
+const OurProduceCards = ({ image, text, link }) => {
   return (
-    <div className="  rounded-lg  flex flex-col items-start">
+    <div className="rounded-lg flex flex-col items-start">
       <img
         src={image}
         alt={text}
@@ -12,14 +13,14 @@ const OurProduceCards = ({ image, text, onClick }) => {
       <p className="font-commissioner font-semibold text-[20px] leading-[24px] text-black ">
         {text}
       </p>
-      <button
-  onClick={() => window.location.href = '/about/our-story'}
-  className="flex items-center justify-center w-[180px] h-[45px] bg-black text-white font-semibold text-lg md:text-[18px] 
-             rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none 
-             mt-2 mb-4 transition-transform hover:scale-105"
->
-  Learn More
-</button>
+      <Link
+        to={link}
+        className="flex items-center justify-center w-[180px] h-[45px] bg-black text-white font-semibold text-lg md:text-[18px] 
+                   rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none 
+                   mt-2 mb-4 transition-transform hover:scale-105"
+      >
+        Learn More
+      </Link>
     </div>
   );
 };

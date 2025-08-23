@@ -8,31 +8,20 @@ import image1 from '../assets/Rectangle 1505.png';
 import image2 from '../assets/Vector 7.svg';
 import image3 from '../assets/Vector(12).png';
 
-// NOTE: For the smoothest experience, add the following CSS to your global stylesheet (e.g., globals.css)
-// to hide the horizontal scrollbar on the card slider.
-/*
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-*/
+
 
 const MissionAndVision = () => {
   const scrollRef = useRef(null);
 
-  // A dynamic scroll function that works on all screen sizes.
-  // It calculates the width of a card + the gap to scroll precisely one item at a time.
+  
   const scroll = (direction) => {
     if (scrollRef.current) {
       const card = scrollRef.current.children[0];
       if (card) {
-        const gap = 32; // This is the pixel value for Tailwind's `gap-8` (8 * 4px = 32px)
+        const gap = 32;
         const scrollAmount = card.offsetWidth + gap;
         scrollRef.current.scrollBy({
-          left: direction * scrollAmount, // direction will be -1 for left, 1 for right
+          left: direction * scrollAmount, 
           behavior: "smooth",
         });
       }
@@ -56,7 +45,7 @@ const MissionAndVision = () => {
           <div className="relative mb-10 w-fit">
             {/* Responsive font size */}
             <h5 className="text-[20px] md:text-[24px] leading-[28px] md:leading-[32px] font-normal text-white">
-              Sustainability
+              Our Mandate
             </h5>
             <img
               src={image2}
