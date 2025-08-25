@@ -22,7 +22,7 @@ const ProductDetailLayout = ({ image, title, subtitle, children }) => {
         <img
           src={image}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover object-top -z-10 "
+          className="absolute inset-0 w-full h-full object-cover object-center -z-10 "
         />
 
         <div className="ms-20">

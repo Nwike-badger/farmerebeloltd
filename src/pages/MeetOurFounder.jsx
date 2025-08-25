@@ -41,8 +41,8 @@ const MeetOurFounder = () => {
           {/* Contact Info */}
           {/* Stacks vertically on small screens and aligns with the text content. */}
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-x-6 gap-y-2 text-sm sm:text-base text-gray-600">
-            <p>Email: <a href="mailto:whisper2ikev@gmail.com" className="text-blue-600 hover:underline">whisper2ikev@gmail.com</a></p>
-            <p>LinkedIn: <a href="#" className="text-blue-600 hover:underline">victorslinkedin</a></p>
+            <p>Email: <a href="mailto:goodluckebelo@farmerebelo.biz" className="text-blue-600 hover:underline">whisper2ikev@gmail.com</a></p>
+            <p>LinkedIn: <a href="#" className="text-blue-600 hover:underline">Goodluck Ebelo</a></p>
           </div>
         </div>
 
