@@ -1,13 +1,14 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/Group 1000003955.png'
-import image2 from '../assets/Palm Fruits Image.png';
-import image3 from '../assets/Rectangle 1521.png';
-import image4 from '../assets/Rectangle 1522.png';
+import image1 from '../assets/Group 1000003949.png'
+import image2 from '../assets/Rectangle 1519 (copy).png';
+import image3 from '../assets/image (4) Background Removed 5 1.png';
+import image4 from '../assets/image (2) Background Removed 6 1.png';
 import image5 from '../assets/Group(1).svg';
 import image6 from '../assets/Vector(5) (copy).svg';
 import image7 from '../assets/Group(2).svg';
 import image8 from '../assets/Group(1).svg';
+import image9 from '../assets/Group 1000003953.png'
 
 import ProductDetailLayout from '../components/ProductDetailLayout';
 import ProductDetailCard from '../components/ProductDetailCard';
@@ -26,7 +27,7 @@ const PalmOil = () => {
     <div className="p-6 md:p-11">
       <ProductDetailCard
         mainImage={image2}
-        galleryImages={[image1, image3,image4]}
+        galleryImages={[image3, image9,image4]}
         title="Premuim Oil Palm Fruits"
         description="Our oil palm fruits are harvested at optimal 
         ripeness to ensure maximum oil content and quality. 
