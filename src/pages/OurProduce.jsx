@@ -13,9 +13,9 @@ const OurProduce = () => {
   const cards = [
   { image: image3, text: 'Palm Fruits', link: '/our-produce/palm-fruits' },
   { image: image4, text: 'Palm Oil', link: '/our-produce/palm-oil' }, 
-  { image: image5, text: 'Palm Cake', link: '/our-produce/palm-cake' },
-  { image: image6, text: 'Palm Kernel Oil', link: '/our-produce/palm-kernel-oil' },
-  { image: image7, text: 'Sludge', link: '/our-produce/sludge' },
+  { image: image7, text: 'Palm Cake', link: '/our-produce/palm-cake' },
+  { image: image5, text: 'Palm Kernel Oil', link: '/our-produce/palm-kernel-oil' },
+  { image: image6, text: 'Sludge', link: '/our-produce/sludge' },
 ];
   
   return (

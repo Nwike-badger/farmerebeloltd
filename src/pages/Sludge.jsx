@@ -1,9 +1,9 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/Group 1000003955.png'
-import image2 from '../assets/Palm Fruits Image.png';
-import image3 from '../assets/Rectangle 1521.png';
-import image4 from '../assets/Rectangle 1522.png';
+import image1 from '../assets/sludge.png'
+import image2 from '../assets/sludge1.png';
+import image3 from '../assets/sludge2.png';
+import image4 from '../assets/sludge3.png';
 import image5 from '../assets/Group(1).svg';
 import image6 from '../assets/Vector(5) (copy).svg';
 import image7 from '../assets/Group(2).svg';
@@ -19,20 +19,16 @@ const Sludge = () => {
   return (
     <ProductDetailLayout
       image={image1}
-      title="Palm Fruits"
-      subtitle="Fresh, Premium Quality Oil Palm Fruits"
+      title="Sludge"
+      subtitle="High Quality Sludge"
     >
 
     <div className="p-6 md:p-11">
       <ProductDetailCard
-        mainImage={image2}
-        galleryImages={[image1, image3,image4]}
-        title="Premuim Oil Palm Fruits"
-        description="Our oil palm fruits are harvested at optimal 
-        ripeness to ensure maximum oil content and quality. 
-        Grown in the fertile soils of Edo State, Nigeria, these 
-        fresh fruits are the foundation of our sustainable palm oil
-         production process."
+        mainImage={image1}
+        galleryImages={[image2, image3,image4]}
+        title="High Quality Sludge"
+        description="Our sludge is a by-product of palm oil processing, rich in nutrient and commonly used in animal feed, soap making, and biofuel production among others. The sludge at Farmer Ebelo provides industries with a reliable raw material without compromising quality."
         features={[
           { icon: image5, text: "100% Organic" },
           { icon: image6, text: "Fresh Harvest" },
