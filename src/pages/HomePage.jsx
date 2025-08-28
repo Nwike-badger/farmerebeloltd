@@ -2,17 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'; 
 import CountUp from 'react-countup'; 
 
-
-import image1 from '../assets/home.png';
-import image2 from '../assets/farm.png';
-import image3 from '../assets/palmfruits.png';
 import logo1 from '../assets/EDSG-LOGO-Hi-res 1.svg';
 import logo2 from '../assets/nirsal-logo-big 1.svg';
 import logo3 from '../assets/boa-logo 1.svg';
 import logo4 from '../assets/bank 1.svg';
 import logo5 from '../assets/logo 1.svg';
-import image6 from '../assets/factory.png';
-import image7 from '../assets/Vector(10).png';
 import image8 from '../assets/palmfruits2.png';
 import image9 from '../assets/Palm Fruits Image.png'
 import image10 from '../assets/palmfruitsoil.png'
@@ -28,6 +22,7 @@ import image20 from '../assets/farm2.png'
 import image21 from '../assets/farm3.png'
 import image22 from '../assets/Group 1000003916.svg'
 import image23 from '../assets/Group 1000003917.svg'
+import OptimizedImage from "../components/OptimizedImage";
 import HomepageCardWithIcon from '../components/HompageCardWithIcon';
 import VideoSlider from "../components/VideoSlider";
 
@@ -53,7 +48,7 @@ const AnimatedStat = ({ number, suffix, children }) => {
 
 const HomePage = () => {
   
-  const backgrounds = [image1, image2, image3];
+  const backgrounds = ["farm", "factory", "harvest"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -122,19 +117,19 @@ const myVideos = [
         
         {/* HERO BACKGROUND IMAGES */}
         <div className="absolute inset-0 z-10">
-          {backgrounds.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt="Background"
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-                index === currentIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ zIndex: index === currentIndex ? 1 : 0 }}
-            />
-          ))}
-          {/* add a blue or any color Overlay */}
-          <div className="absolute inset-0 bg-black/30 z-10"></div>
+      {backgrounds.map((name, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ zIndex: index === currentIndex ? 1 : 0 }}
+        >
+          <OptimizedImage name={name} alt={`${name} background`} />
+        </div>
+      ))}
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30 z-10"></div>
     </div>
 
 
@@ -208,10 +203,25 @@ const myVideos = [
             </div>
           </div>
           
-          <div className={`relative w-full lg:w-[45%] mt-8 lg:mt-2 min-h-[300px] lg:min-h-[550px] flex justify-center items-center lg:items-start transition-all duration-500 delay-200 ${whoWeAreInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <img src={image6} alt="Lush, green palm oil plantation..." className="w-full max-w-lg lg:max-w-full h-auto lg:h-[550px] rounded-xl object-cover shadow-lg"/>
-            <img src={image7} alt="" className="absolute bottom-[-20px] right-[-10px] w-[100px] lg:w-[145px] lg:bottom-[-60px] lg:right-[-50px]"/>
-          </div>
+          <div
+              className={`relative w-full lg:w-[45%] mt-8 lg:mt-2 min-h-[300px] lg:min-h-[550px] flex justify-center items-center lg:items-start transition-all duration-500 delay-200 ${
+                whoWeAreInView ? "animate-fade-in-up" : "opacity-0"
+              }`}
+            >
+              {/* Main image (optimized) */}
+              <OptimizedImage
+                name="factory" // 👈 make sure you have plantation-1600.jpg/webp/avif in optimized folder
+                alt="Lush, green palm oil plantation..."
+                className="w-full max-w-lg lg:max-w-full h-auto lg:h-[550px] rounded-xl object-cover shadow-lg"
+              />
+
+              {/* Overlay image (still small, can stay as normal img or optimize if you want) */}
+              <img
+                src="/src/assets/Vector(10).png" // 👈 if you optimize this too, just use OptimizedImage
+                alt=""
+                className="absolute bottom-[-20px] right-[-10px] w-[100px] lg:w-[145px] lg:bottom-[-60px] lg:right-[-50px]"
+              />
+        </div>
         </section>
 
         {/* MODIFIED: Reduced vertical padding on mobile. */}
