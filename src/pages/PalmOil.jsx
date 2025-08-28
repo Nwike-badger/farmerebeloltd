@@ -1,7 +1,7 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/Group 1000003949.png'
-import image2 from '../assets/Rectangle 1519 (copy).png';
+import image1 from '../assets/palmoil6.png'
+import image2 from '../assets/palmoil5.png';
 import image3 from '../assets/palmoil3.png';
 import image4 from '../assets/palmoil2.png';
 import image5 from '../assets/Group(1).svg';

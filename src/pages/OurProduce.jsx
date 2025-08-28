@@ -1,11 +1,11 @@
 import React from 'react';
-import image1 from '../assets/Group 61 (copy).png'
+import image1 from '../assets/palmfruits2.png'
 import image2 from '../assets/Vector 7.svg';
 import image3 from '../assets/Palm Fruits Image.png';
-import image4 from '../assets/Ad545a73c0ee94490ab7908968f0cf4b4A 1.png';
-import image5 from '../assets/Rectangle 1511.png'
-import image6 from '../assets/Rectangle 1513.png'
-import image7 from '../assets/Rectangle 1519.png';
+import image4 from '../assets/palmoil4.png';
+import image5 from '../assets/palmfruitsoil.png'
+import image6 from '../assets/sludge.png'
+import image7 from '../assets/palmkernel.png';
 import OurProduceCards from '../components/OurProduceCards';
 
 const OurProduce = () => {
@@ -23,14 +23,16 @@ const OurProduce = () => {
       
 
       {/* Background Section */}
-      <section className="relative min-h-[90vh]  flex items-center text-white">
+      <section className="relative min-h-[66vh] md:min-h-[90vh]  flex items-center text-white">
   
             <div className="absolute inset-0  -z-10">
               <img
                 src={image1}
                 alt="Background"
-                className="w-full h-full object-cover "
+                className="w-full h-[600px] md:h-full object-cover "
+              
               />
+              <div className="absolute inset-0 bg-black/30 z-10"></div>
             </div>
 
             
@@ -54,14 +56,14 @@ const OurProduce = () => {
               </h2>
 
               
-              <p className="text-lg md:text-[25px] leading-relaxed md:leading-[32px] font-light max-w-3xl">
+              <p className="text-lg md:text-[23px] leading-relaxed md:leading-[32px] font-semibold max-w-3xl">
                 From our fields to your table, we grow grest, pesticde free palm and ensure it reaches you within 24 hours of harvest.
               </p>
             </div>
     </section>
 
 
-    <section className="bg-gray-100 py-12 md:py-16">
+    <section className=" py-12 md:py-16">
   {/* CHANGED: Using mobile-first padding, then restoring your desktop `px-19` value. */}
           <div className="max-w-8xl mx-auto px-4 md:px-19">
             {/* CHANGED: Using a larger gap on mobile/tablet, then restoring your tighter `gap-2` for the desktop layout. */}

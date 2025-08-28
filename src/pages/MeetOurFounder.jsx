@@ -1,6 +1,6 @@
 // MeetOurFounder.jsx
 import React from 'react';
-import image1 from '../assets/Rectangle 1486.png';
+import image1 from '../assets/founder.png';
 
 const MeetOurFounder = () => {
   return (
@@ -18,10 +18,10 @@ const MeetOurFounder = () => {
           />
         </div>
 
-        {/* Founder Text Container: Centers text on mobile and left-aligns it on desktop. */}
+        
         <div className="flex flex-col text-center md:text-left">
           
-          {/* Name: Refactored into a single heading for better semantics and accessibility. */}
+          
           <h2 className="font-commissioner text-[32px] sm:text-[42px] lg:text-[48px] leading-tight tracking-tight">
             <span className="font-medium">Goodluck Ilajufi</span>
             <br className="hidden md:block" />
@@ -33,15 +33,12 @@ const MeetOurFounder = () => {
             Managing Director, Farmer Ebelo Limited
           </p>
 
-          {/* Underline: CRITICAL FIX */}
-          {/* Replaced fixed `w-[900px]` with a responsive width that adapts to the container. */}
-          {/* `mx-auto md:mx-0` centers it on mobile and left-aligns it on desktop. */}
+          
           <hr className="w-full max-w-md mx-auto md:mx-0 my-6 border-t border-gray-400/30" />
 
-          {/* Contact Info */}
-          {/* Stacks vertically on small screens and aligns with the text content. */}
+          
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-x-6 gap-y-2 text-sm sm:text-base text-gray-600">
-            <p>Email: <a href="mailto:goodluckebelo@farmerebelo.biz" className="text-blue-600 hover:underline">whisper2ikev@gmail.com</a></p>
+            <p>Email: <a href="mailto:goodluckebelo@farmerebelo.biz" className="text-blue-600 hover:underline">goodluckebelo@farmerebelo.biz</a></p>
             <p>LinkedIn: <a href="#" className="text-blue-600 hover:underline">Goodluck Ebelo</a></p>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 // Import Link for social icons and NavLink for navigation
 import { NavLink, Link } from 'react-router-dom';
 import Logo from "../assets/Screenshot_2025-07-01_at_9.51.08_pm-removebg-preview.png";
-import image2 from "../assets/Group 50.svg";
+import image2 from "../assets/flagng.svg";
 import image3 from '../assets/Vector(6).svg';
 import image4 from '../assets/Vector(7).svg';
 import image5 from '../assets/Vector(8).svg';

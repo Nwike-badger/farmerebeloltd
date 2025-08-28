@@ -2,8 +2,8 @@
 import React from 'react';
 import image1 from '../assets/Group 1000003955.png'
 import image2 from '../assets/Palm Fruits Image.png';
-import image3 from '../assets/Rectangle 1521.png';
-import image4 from '../assets/Rectangle 1522.png';
+import image3 from '../assets/palmfruits3.png';
+import image4 from '../assets/palmfruits4.png';
 import image5 from '../assets/Group(1).svg';
 import image6 from '../assets/Vector(5) (copy).svg';
 import image7 from '../assets/Group(2).svg';
@@ -45,7 +45,7 @@ const PalmFruits = () => {
           { label: "Oil Content", value: "18% - 22%" },
           { label: "Moisture Content", value: "12% - 15%" },
         ]}
-        buttonText="Back to Products"
+        buttonText="Contact for Pricing"
         onButtonClick={() => (window.location.href = "/our-produce")}
       />
     </div>

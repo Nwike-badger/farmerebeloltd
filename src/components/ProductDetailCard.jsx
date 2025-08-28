@@ -115,7 +115,9 @@ const ProductDetailCard = ({
           <div className="mt-auto pt-6">
             <button
               onClick={onButtonClick}
-              className="w-full sm:w-auto px-8 py-3 bg-black text-white rounded-xl font-semibold text-lg hover:bg-green-700 transition"
+              className="flex items-center justify-center w-[180px] h-[45px] bg-black text-white font-semibold text-lg md:text-[18px] 
+                   rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none 
+                   mt-2 mb-4 transition-transform hover:scale-105"
             >
               {buttonText}
             </button>

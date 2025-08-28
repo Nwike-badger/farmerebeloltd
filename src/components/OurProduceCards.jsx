@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const OurProduceCards = ({ image, text, link }) => {
   return (
-    <div className="rounded-lg flex flex-col items-start">
+    <div className="rounded-lg flex flex-col items-center md:items-start">
       <img
         src={image}
         alt={text}
-        className="w-[528px] h-[430px] object-cover rounded-[10px] mb-4"
+        className="w-[320px] md:w-[425px] h-[350px] md:h-[350px] ms-6 md:ms-0 object-cover rounded-[10px] mb-4 bg-[#F9FAFB]"
       />
-      <p className="font-commissioner font-semibold text-[20px] leading-[24px] text-black ">
+      <p className="font-commissioner font-bold text-[17px] leading-[24px] text-black ">
         {text}
       </p>
       <Link

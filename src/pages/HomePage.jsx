@@ -2,35 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'; 
 import CountUp from 'react-countup'; 
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import image1 from '../assets/Group 114.png';
-import image2 from '../assets/Group 114(1).png';
-import image3 from '../assets/Group 114(2).png';
+
+import image1 from '../assets/home.png';
+import image2 from '../assets/farm.png';
+import image3 from '../assets/palmfruits.png';
 import logo1 from '../assets/EDSG-LOGO-Hi-res 1.svg';
 import logo2 from '../assets/nirsal-logo-big 1.svg';
 import logo3 from '../assets/boa-logo 1.svg';
 import logo4 from '../assets/bank 1.svg';
 import logo5 from '../assets/logo 1.svg';
-import image6 from '../assets/Rectangle 1505.png';
+import image6 from '../assets/factory.png';
 import image7 from '../assets/Vector(10).png';
-import image8 from '../assets/Rectangle 1506.png';
+import image8 from '../assets/palmfruits2.png';
 import image9 from '../assets/Palm Fruits Image.png'
-import image10 from '../assets/Rectangle 1511.png'
-import image11 from '../assets/Rectangle 1513.png'
-import image12 from '../assets/Rectangle 1512.png'
+import image10 from '../assets/palmfruitsoil.png'
+import image11 from '../assets/sludge.png'
+import image12 from '../assets/palmkernel.png'
 import image13 from '../assets/Vector(10) (copy).png';
-import image14 from '../assets/Rectangle 1464.png';
+import image14 from '../assets/staff.png';
 import image15 from '../assets/Vector(3).svg'
 import image16 from '../assets/Group.svg'
 import image17 from '../assets/Vector(4).svg'
-import image18 from '../assets/Group 1000003906.png'
-import image19 from '../assets/Rectangle 1471.png'
-import image20 from '../assets/Rectangle 1472.png'
-import image21 from '../assets/Rectangle 1473.png'
+import image19 from '../assets/staff2.png'
+import image20 from '../assets/farm2.png'
+import image21 from '../assets/farm3.png'
 import image22 from '../assets/Group 1000003916.svg'
 import image23 from '../assets/Group 1000003917.svg'
 import HomepageCardWithIcon from '../components/HompageCardWithIcon';
+import VideoSlider from "../components/VideoSlider";
 
 
 // MODIFIED: Made the paragraph width responsive to prevent awkward wrapping on small screens.
@@ -103,6 +102,14 @@ const HomePage = () => {
      
   },
 ];
+
+const myVideos = [
+  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756382064/video1_compressed_venkqj.mp4",
+  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374672/video2_cnnyui.mov",
+  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374682/video3_dbqvw4.mov",
+  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374672/video2_cnnyui.mov"
+];
+
 
 
 
@@ -339,37 +346,32 @@ const HomePage = () => {
       </section>
 
 
-      {/* MODIFIED: Fixed non-standard padding `px-18`. Made padding responsive. Reduced header font size on mobile. */}
-      {/* DESKTOP ANIMATION: Added staggered fade-in-up animation to the cards. */}
+
       <section ref={cardsRef} className="bg-white pb-12 px-4 md:px-8 lg:px-16">
-  <div className="max-w-[1568px] mx-auto">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {cardsData.map((card, index) => (
-  <HomepageCardWithIcon
-    key={index}
-    icon={card.icon}
-    alt={card.alt}
-    title={card.title}
-    text={card.text}
-    delay={cardsInView ? card.delay : "opacity-0"}
-    offset={card.offset}          
-  />
-))}
-    </div>
-  </div>
-</section>
+          <div className="max-w-[1568px] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {cardsData.map((card, index) => (
+          <HomepageCardWithIcon
+            key={index}
+            icon={card.icon}
+            alt={card.alt}
+            title={card.title}
+            text={card.text}
+            delay={cardsInView ? card.delay : "opacity-0"}
+            offset={card.offset}          
+          />
+        ))}
+            </div>
+          </div>
+      </section>
 
 
 {/* MODIFIED: Fixed non-standard padding `px-18` and made it responsive. */}
-<section className='px-4 md:px-8 lg:px-16 pb-7'>
-  <div className="max-w-[1568px] mx-auto">
-    <img
-            src={image18}
-            alt="Infographic about our process"
-            className="w-full h-full object-contain"
-          />
-  </div>
-</section>
+    <section>
+      <div>
+        <VideoSlider videos={myVideos} />
+      </div>
+    </section>
 
 {/* MODIFIED: Fixed non-standard padding `px-18` and made it responsive. Added a gap on mobile. */}
 <section className="bg-white pb-5 px-4 md:px-8 lg:px-16">

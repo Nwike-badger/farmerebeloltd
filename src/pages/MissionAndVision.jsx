@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import MissionAndVisionCardWithImage from "../components/MissionAndVisionCardWithImage";
 import Footer from "../components/Footer";
 
-import image1 from '../assets/Rectangle 1505.png';
+import image1 from '../assets/factory.png';
 import image2 from '../assets/Vector 7.svg';
 import image3 from '../assets/Vector(12).png';
 
