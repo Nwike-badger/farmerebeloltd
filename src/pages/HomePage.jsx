@@ -27,7 +27,7 @@ import HomepageCardWithIcon from '../components/HompageCardWithIcon';
 import VideoSlider from "../components/VideoSlider";
 
 
-// MODIFIED: Made the paragraph width responsive to prevent awkward wrapping on small screens.
+
 const AnimatedStat = ({ number, suffix, children }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, 
@@ -48,7 +48,7 @@ const AnimatedStat = ({ number, suffix, children }) => {
 
 const HomePage = () => {
   
-  const backgrounds = ["farm", "factory", "harvest"];
+  const backgrounds = ["home", "farm", "palmfruits"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -115,7 +115,7 @@ const myVideos = [
   
       <section className="relative flex flex-col items-center justify-center min-h-screen w-full text-center px-4 overflow-hidden">
         
-        {/* HERO BACKGROUND IMAGES */}
+      
         <div className="absolute inset-0 z-10">
       {backgrounds.map((name, index) => (
         <div
@@ -128,7 +128,7 @@ const myVideos = [
           <OptimizedImage name={name} alt={`${name} background`} />
         </div>
       ))}
-      {/* Overlay */}
+  
       <div className="absolute inset-0 bg-black/30 z-10"></div>
     </div>
 
