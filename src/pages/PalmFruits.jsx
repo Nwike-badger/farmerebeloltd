@@ -1,6 +1,6 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/Group 1000003955.png'
+import image1 from '../assets/palmfruits6.png'
 import image2 from '../assets/Palm Fruits Image.png';
 import image3 from '../assets/palmfruits3.png';
 import image4 from '../assets/palmfruits4.png';

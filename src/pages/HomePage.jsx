@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'; 
 import CountUp from 'react-countup'; 
-
+import image7 from '../assets/Vector(10).png'
 import logo1 from '../assets/EDSG-LOGO-Hi-res 1.svg';
 import logo2 from '../assets/nirsal-logo-big 1.svg';
 import logo3 from '../assets/boa-logo 1.svg';
 import logo4 from '../assets/bank 1.svg';
 import logo5 from '../assets/logo 1.svg';
-import image8 from '../assets/palmfruits2.png';
-import image9 from '../assets/Palm Fruits Image.png'
-import image10 from '../assets/palmfruitsoil.png'
-import image11 from '../assets/sludge.png'
-import image12 from '../assets/palmkernel.png'
+
 import image13 from '../assets/Vector(10) (copy).png';
-import image14 from '../assets/staff.png';
 import image15 from '../assets/Vector(3).svg'
 import image16 from '../assets/Group.svg'
 import image17 from '../assets/Vector(4).svg'
-import image19 from '../assets/staff2.png'
-import image20 from '../assets/farm2.png'
-import image21 from '../assets/farm3.png'
 import image22 from '../assets/Group 1000003916.svg'
 import image23 from '../assets/Group 1000003917.svg'
-import OptimizedImage from "../components/OptimizedImage";
 import HomepageCardWithIcon from '../components/HompageCardWithIcon';
 import VideoSlider from "../components/VideoSlider";
 
@@ -48,7 +39,11 @@ const AnimatedStat = ({ number, suffix, children }) => {
 
 const HomePage = () => {
   
-  const backgrounds = ["home", "farm", "palmfruits"];
+  const backgrounds = [
+      "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/home_zxcsqy.jpg",
+      "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414781/farm_y9pviw.jpg",
+      "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/palmfruits_ocbmpm.jpg"
+    ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -117,19 +112,20 @@ const myVideos = [
         
       
         <div className="absolute inset-0 z-10">
-      {backgrounds.map((name, index) => (
-        <div
+      {backgrounds.map((src, index) => (
+        <img
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+          src={src}
+          alt="Background"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
           style={{ zIndex: index === currentIndex ? 1 : 0 }}
-        >
-          <OptimizedImage name={name} alt={`${name} background`} />
-        </div>
+        />
       ))}
-  
-      <div className="absolute inset-0 bg-black/30 z-10"></div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/10 z-10"></div>
     </div>
 
 
@@ -158,7 +154,7 @@ const myVideos = [
       </section>
 
 
-        {/* MODIFIED: Added a light background color for this section to stand out on mobile. Reduced padding and gaps for a tighter mobile view. */}
+        
         <section ref={partnersRef} className={`w-full bg-[#F7F7F7] py-10 lg:pt-12 lg:pb-4 transition-opacity duration-1000 ${partnersInView ? 'opacity-100' : 'opacity-0'}`}>
             <div className='items-center flex flex-col justify-center w-full text-black px-4'>
                 <p className="font-medium font-commissioner text-center text-lg md:text-[20px] md:leading-[30px] max-w-3xl drop-shadow-md mb-8 lg:mb-10">
@@ -175,7 +171,7 @@ const myVideos = [
         </section>
 
         
-        {/* MODIFIED: Reduced vertical padding for mobile. Adjusted text size for better readability on small screens. Removed fixed min-height on mobile to prevent excess empty space. */}
+        
         <section ref={whoWeAreRef} className="flex flex-wrap justify-center items-start w-full bg-[#E2FFEF] py-12 md:py-16 px-4 lg:ps-5 gap-8">
           <div className={`w-full lg:w-[45%] transition-all duration-500 ${whoWeAreInView ? 'animate-fade-in-right' : 'opacity-0'}`}>
             <div className="flex flex-col justify-between lg:min-h-[500px]">
@@ -204,24 +200,24 @@ const myVideos = [
           </div>
           
           <div
-              className={`relative w-full lg:w-[45%] mt-8 lg:mt-2 min-h-[300px] lg:min-h-[550px] flex justify-center items-center lg:items-start transition-all duration-500 delay-200 ${
-                whoWeAreInView ? "animate-fade-in-up" : "opacity-0"
-              }`}
-            >
-              {/* Main image (optimized) */}
-              <OptimizedImage
-                name="factory" // 👈 make sure you have plantation-1600.jpg/webp/avif in optimized folder
-                alt="Lush, green palm oil plantation..."
-                className="w-full max-w-lg lg:max-w-full h-auto lg:h-[550px] rounded-xl object-cover shadow-lg"
-              />
+                className={`relative w-full lg:w-[45%] mt-8 lg:mt-2 min-h-[300px] lg:min-h-[550px] flex justify-center items-center lg:items-start transition-all duration-500 delay-200 ${
+                  whoWeAreInView ? "animate-fade-in-up" : "opacity-0"
+                }`}
+              >
+                <img
+                  src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756415724/staff4_z0tuof.png"
+                  alt="Lush, green palm oil plantation..."
+                  className="w-full max-w-lg lg:max-w-full h-auto lg:h-[550px] rounded-xl object-cover shadow-lg"
+                />
 
-              {/* Overlay image (still small, can stay as normal img or optimize if you want) */}
-              <img
-                src="/src/assets/Vector(10).png" // 👈 if you optimize this too, just use OptimizedImage
-                alt=""
-                className="absolute bottom-[-20px] right-[-10px] w-[100px] lg:w-[145px] lg:bottom-[-60px] lg:right-[-50px]"
-              />
-        </div>
+                <img
+                  src={image7}
+                  alt=""
+                  className="absolute bottom-[-20px] right-[-10px] w-[100px] lg:w-[145px] lg:bottom-[-60px] lg:right-[-50px]"
+                />
+       </div>
+
+        
         </section>
 
         {/* MODIFIED: Reduced vertical padding on mobile. */}
@@ -230,7 +226,7 @@ const myVideos = [
               <h2 className="text-2xl md:text-3xl lg:text-4xl leading-tight lg:leading-[1.3] font-extrabold mb-6 text-black ">From humble beginnings in 2019 to thriving fields, we have harvested and processed over <span className='text-[#00994D]'>14,000</span> palm fruits.</h2>
           </div>
           <div className="relative w-full lg:w-[45%]">
-            <img src={image8} alt="Close-up of freshly harvested palm fruits." className="w-full h-auto max-h-[350px] rounded-xl object-cover shadow-lg"/>
+            <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383842/palmfruits2_uucvk7.png" alt="Close-up of freshly harvested palm fruits." className="w-full h-auto max-h-[350px] rounded-xl object-cover shadow-lg"/>
           </div>
         </section>
 
@@ -262,7 +258,7 @@ const myVideos = [
             <div className="max-w-[82rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div className="relative group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                <img src={image9} alt="Palm Fruits" className="w-full h-full object-cover"/>
+                <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/Palm_Fruits_Image_u3wksg.jpg" alt="Palm Fruits" className="w-full h-full object-cover"/>
                 <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="text-white text-3xl md:text-4xl font-semibold">Palm Fruits</span>
                 </div>
@@ -271,13 +267,13 @@ const myVideos = [
               <div className="grid grid-rows-2 gap-6">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="relative group w-full overflow-hidden rounded-2xl shadow-md">
-                    <img src={image10} alt="Palm Kernel Oil" className="w-full h-full object-cover" />
+                    <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383840/palmfruitsoil_pitrsu.png" alt="Palm Kernel Oil" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-white text-2xl md:text-4xl font-semibold">Palm Kernel Oil</span>
                     </div>
                   </div>
                   <div className="relative group w-full overflow-hidden rounded-2xl shadow-md">
-                    <img src={image11} alt="Sludge" className="w-full h-full object-cover" />
+                    <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/sludge_bbwstk.png" alt="Sludge" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-white text-3xl md:text-4xl font-semibold">Sludge</span>
                     </div>
@@ -285,7 +281,7 @@ const myVideos = [
                 </div>
 
                 <div className="relative group overflow-hidden rounded-2xl shadow-md">
-                  <img src={image12} alt="Palm Kernel Cake" className="w-full h-full object-cover"/>
+                  <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/palmkernel_vy6fyh.png" alt="Palm Kernel Cake" className="w-full h-full object-cover"/>
                   <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white text-3xl md:text-4xl font-semibold">Palm Kernel Cake</span>
                   </div>
@@ -296,34 +292,34 @@ const myVideos = [
         </section>
 
 {/* MODIFIED: Reduced vertical padding, margins and font sizes for a better mobile layout. Adjusted decorative image size and position for mobile. */}
-<section className="relative px-4 py-12 md:py-16 bg-[#E2FFEF] text-center mb-12 md:mb-20 overflow-hidden">
-  <h4 className="text-2xl md:text-[32px] leading-none font-commissioner font-semibold text-[#00994D] mb-4">
-    Partner with us
-  </h4>
+        <section className="relative px-4 py-12 md:py-16 bg-[#E2FFEF] text-center mb-12 md:mb-20 overflow-hidden">
+          <h4 className="text-2xl md:text-[32px] leading-none font-commissioner font-semibold text-[#00994D] mb-4">
+            Partner with us
+          </h4>
 
-  <h2 className="text-4xl md:text-[56px] leading-tight md:leading-none font-commissioner font-bold text-black mb-6 max-w-xl mx-auto">
-    Partnering to Grow Value, Sustainably
-  </h2>
+          <h2 className="text-4xl md:text-[56px] leading-tight md:leading-none font-commissioner font-bold text-black mb-6 max-w-xl mx-auto">
+            Partnering to Grow Value, Sustainably
+          </h2>
 
-  <p className="text-base md:text-[21px] leading-relaxed md:leading-[32px] font-manrope font-medium text-black max-w-xl mx-auto mb-8">
-    At Farmer Ebelo Limited, we are building more than a farm. We are creating a scalable, full-cycle palm processing operation with long term growth and impact. Partner with us on this journey towards delivering economic impact.
-  </p>
+          <p className="text-base md:text-[21px] leading-relaxed md:leading-[32px] font-manrope font-medium text-black max-w-xl mx-auto mb-8">
+            At Farmer Ebelo Limited, we are building more than a farm. We are creating a scalable, full-cycle palm processing operation with long term growth and impact. Partner with us on this journey towards delivering economic impact.
+          </p>
 
-  <button
-    onClick={() => window.location.href = '/contact'}
-    className="relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
-      rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
-       transition-all duration-700 ease-in-out hover:bg-gray-800 hover:scale-105"
-  >
-    Contact Us
-  </button>
+          <button
+            onClick={() => window.location.href = '/contact'}
+            className="relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
+              rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
+              transition-all duration-700 ease-in-out hover:bg-gray-800 hover:scale-105"
+          >
+            Contact Us
+          </button>
 
-  <img
-    src={image13}
-    alt="Decorative"
-    className="absolute -bottom-12 -left-8 w-[120px] md:w-[180px] object-contain -z-0"
-  />
-</section>
+          <img
+            src={image13}
+            alt="Decorative"
+            className="absolute -bottom-12 -left-8 w-[120px] md:w-[180px] object-contain -z-0"
+          />
+        </section>
 
 
       {/* MODIFIED: Used a new ref for intersection observer. Reduced padding and font sizes for mobile. */}
@@ -348,7 +344,7 @@ const myVideos = [
 
           <div className="basis-full md:basis-[45%] relative">
             <img
-              src={image14}
+              src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383842/staff_btdqbk.png"
               alt="Close-up of freshly harvested palm fruits."
               className="w-full h-auto max-h-[400px] rounded-xl object-cover shadow-lg"
             />
@@ -388,16 +384,17 @@ const myVideos = [
   <div className="max-w-[1568px] mx-auto">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       
+      
         <div className="flex flex-col h-full">
-            <img src={image19} alt="Farm land" className="w-full h-full object-cover rounded-lg"/>
+            <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383840/staff2_fmjojx.png" alt="Farm land" className="w-full h-full object-cover rounded-lg"/>
         </div>
 
         <div className="flex flex-col h-full">
-            <img src={image20} alt="Palm fruit harvesting" className="w-full h-full object-cover rounded-lg" />
+            <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/farm2_opyhmb.png" alt="Palm fruit harvesting" className="w-full h-full object-cover rounded-lg" />
         </div>
 
         <div className="flex flex-col h-full sm:col-span-2 lg:col-span-1">
-            <img src={image21} alt="Factory processing" className="w-full h-full object-cover rounded-lg" />
+            <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756415726/staff5_elda3w.png" alt="Factory processing" className="w-full h-full object-cover rounded-lg" />
         </div>
     </div>
   </div>

@@ -34,7 +34,7 @@ const MissionAndVision = () => {
       <section className="relative min-h-screen pb-16">
         {/* Background Image */}
         <img
-          src={image1}
+          src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/factory_i8p8uo.jpg"
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />

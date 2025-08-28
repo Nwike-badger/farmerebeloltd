@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom"; 
-import image1 from '../assets/farm5.png';
 import image2 from '../assets/Vector 7.svg';
 import image3 from '../assets/founder.png'
 
@@ -10,7 +9,7 @@ const OurStory = () => {
       {/* Background Section */}
       <section className="relative min-h-[100vh] pb-16">
         <img
-          src={image1}
+          src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/farm5_po3624.jpg"
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />

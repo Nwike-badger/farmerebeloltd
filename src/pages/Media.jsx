@@ -1,29 +1,25 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/farm2.png';
-import image2 from '../assets/staff2.png';
-import image3 from '../assets/community.png';
-import image4 from '../assets/Rectangle 1490.png';
-import image5 from '../assets/palmkernel1.png';
-import image6 from '../assets/palmkernel.png';
-import image7 from '../assets/factory.png';
-import image8 from '../assets/building.png';
-import image9 from '../assets/factory2.png';
-import image10 from '../assets/farm4.png';
-import image11 from '../assets/staff.png';
-import image12 from '../assets/staff3.png';
-import image13 from '../assets/Rectangle 1499.png';
-import image14 from '../assets/factory3.png';
-import image15 from '../assets/farm3.png';
-import image16 from '../assets/govt.png';
-
 import Footer from '../components/Footer';
 import MediaGallery from '../components/MediaGallery';
 
 const Media = () => {
   const images = [
-    image2, image3, image4, image5, image6, image7, image8, image9,
-    image10, image11, image12, image13, image14, image15, image16
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383840/staff2_fmjojx.png", 
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383834/community_ofkvpn.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383831/Rectangle_1499_k83m70.png", 
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383835/palmkernel1_dkaij5.png", 
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/palmkernel_vy6fyh.png", 
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/factory_i8p8uo.jpg",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383833/building_o9xgya.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383833/factory2_brqwrb.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383833/farm4_j5y0et.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383842/staff_btdqbk.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383831/staff3_paoavx.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383831/Rectangle_1499_k83m70.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383830/factory3_ttjf3q.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383836/farm3_ur5qtc.png",
+    "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383830/govt_algh3q.png"
   ];
 
   return (
@@ -33,7 +29,7 @@ const Media = () => {
       {/* Background Section - The image here will now be visible. */}
       <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center text-center">
         <img
-          src={image1}
+          src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/farm2_opyhmb.png"
           alt="Farmer Ebelo farm background"
           className="absolute inset-0 w-full h-full object-cover object-center -z-10"
         />

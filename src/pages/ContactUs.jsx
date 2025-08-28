@@ -2,8 +2,7 @@ import React from 'react';
 import image1 from '../assets/farm2.png';
 import image2 from '../assets/map.png';
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+
 
 const ContactUs = () => {
   return (
