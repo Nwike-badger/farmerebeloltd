@@ -3,7 +3,7 @@ import React from 'react';
 import image5 from '../assets/Group(1).svg';
 import image6 from '../assets/Vector(5) (copy).svg';
 import image7 from '../assets/Group(2).svg';
-import image8 from '../assets/Group(1).svg';
+import image8 from '../assets/Group(3).svg';
 
 import ProductDetailLayout from '../components/ProductDetailLayout';
 import ProductDetailCard from '../components/ProductDetailCard';
@@ -26,7 +26,7 @@ const PalmFruits = () => {
           "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414779/palmfruits6_coo2mo.jpg",
            "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383828/palmfruits3_fkfnhm.png",
            "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383827/palmfruits4_obiash.png"]}
-        title="Premuim Oil Palm Fruits"
+        title="Premium Oil Palm Fruits"
         description="Our oil palm fruits are harvested at optimal 
         ripeness to ensure maximum oil content and quality. 
         Grown in the fertile soils of Edo State, Nigeria, these 

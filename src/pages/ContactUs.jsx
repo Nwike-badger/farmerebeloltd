@@ -1,17 +1,15 @@
 import React from 'react';
-import image1 from '../assets/farm2.png';
-import image2 from '../assets/map.png';
 
 
 
 const ContactUs = () => {
   return (
     <div className="relative w-screen min-h-screen font-commissioner">
-      {/* Background Section */}
+    
       <section className="relative min-h-[70vh]">
-        {/* Background Image */}
+        
         <img
-          src={image1}
+          src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/farm2_opyhmb.png"
           alt="Background"
           className="absolute inset-0 w-full h-full object-cover -z-10"
         />
@@ -29,13 +27,12 @@ const ContactUs = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      {/* Contact Section */}
+      
 <section className="flex flex-col md:flex-row justify-between max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-10">
   {/* Left Card */}
   <div className="basis-full md:basis-[64%] flex flex-col">
     <img
-      src={image2}
+      src= "https://res.cloudinary.com/dk95qi8q9/image/upload/v1756383829/map_bzuspb.png"
       alt="Close-up of freshly harvested palm fruits."
       className="w-full max-h-[700px] rounded-2xl object-cover shadow-lg"
     />

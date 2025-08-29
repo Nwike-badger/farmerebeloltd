@@ -1,3 +1,4 @@
+// ProductDetailCard.jsx
 import React from "react";
 
 const ProductDetailCard = ({
@@ -9,10 +10,17 @@ const ProductDetailCard = ({
   specs = [],
   buttonText = "Learn More",
   onButtonClick,
-  
+
+  // Defaults
   galleryItemContainerClassName = "w-full h-24 md:h-28 bg-gray-100 rounded-lg overflow-hidden items-center justify-center",
-  
   galleryImageClassName = "w-full h-full object-cover cursor-pointer hover:scale-105 transition flex justify-center items-center",
+
+  // Optional overrides (only applied to the LAST gallery item/image)
+  lastGalleryItemContainerClassName = "",
+  lastGalleryImageClassName = "",
+
+  // Specs override from before (unused here but kept for compatibility)
+  customSpecsClassName = "",
 }) => {
   return (
     <div className="max-w-8xl mx-auto bg-white overflow-hidden">
@@ -24,23 +32,31 @@ const ProductDetailCard = ({
             alt={title}
             className="w-full h-[300px] md:h-[450px] object-cover rounded-xl mb-4"
           />
-          <div className="grid grid-cols-3 gap-3 ">
-            {galleryImages.map((img, idx) => (
-              
-              <div key={idx} className={galleryItemContainerClassName}>
-                <img
-                  src={img}
-                  alt={`Gallery ${idx + 1}`}
-                  className={galleryImageClassName}
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-3 gap-3">
+            {galleryImages.map((img, idx) => {
+              const isLast = idx === galleryImages.length - 1;
+              return (
+                <div
+                  key={idx}
+                  className={`${galleryItemContainerClassName} ${
+                    isLast ? lastGalleryItemContainerClassName : ""
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`Gallery ${idx + 1}`}
+                    className={`${galleryImageClassName} ${
+                      isLast ? lastGalleryImageClassName : ""
+                    }`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Right: Content (No changes here) */}
+        {/* Right: Content */}
         <div className="md:basis-1/2 flex flex-col gap-6 md:gap-6">
-          
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{title}</h2>
             <p className="text-gray-600 text-[15px] leading-relaxed">{description}</p>
@@ -50,13 +66,13 @@ const ProductDetailCard = ({
           {features.length > 0 && (
             <div>
               <h4 className="text-lg md:text-xl font-semibold mb-4">Key Features</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
                 {features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <img
                       src={feature.icon}
                       alt={feature.text}
-                      className="w-4 h-4 object-contain flex-shrink-0"
+                      className="w-5 h-5 object-contain flex-shrink-0"
                     />
                     <p className="text-gray-700 text-[15px]">{feature.text}</p>
                   </div>
@@ -81,11 +97,12 @@ const ProductDetailCard = ({
                   {specs.map((spec, idx) => (
                     <div
                       key={idx}
-                      className="
+                      className={`
                         flex flex-col
                         sm:flex-row sm:items-center sm:gap-2
                         md:gap-4
-                      "
+                        ${customSpecsClassName}
+                      `}
                     >
                       <p
                         className="
@@ -96,12 +113,7 @@ const ProductDetailCard = ({
                       >
                         {spec.label}:
                       </p>
-                      <p
-                        className="
-                          text-base  
-                           md:font-commissioner 
-                        "
-                      >
+                      <p className="text-base md:font-commissioner">
                         {spec.value}
                       </p>
                     </div>
