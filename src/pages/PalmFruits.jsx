@@ -1,9 +1,5 @@
 // Media.jsx
 import React from 'react';
-import image1 from '../assets/palmfruits6.png'
-import image2 from '../assets/Palm Fruits Image.png';
-import image3 from '../assets/palmfruits3.png';
-import image4 from '../assets/palmfruits4.png';
 import image5 from '../assets/Group(1).svg';
 import image6 from '../assets/Vector(5) (copy).svg';
 import image7 from '../assets/Group(2).svg';
@@ -18,15 +14,18 @@ const PalmFruits = () => {
 
   return (
     <ProductDetailLayout
-      image={image1}
+      image= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414779/palmfruits6_coo2mo.jpg"
       title="Palm Fruits"
       subtitle="Fresh, Premium Quality Oil Palm Fruits"
     >
 
     <div className="p-6 md:p-11">
       <ProductDetailCard
-        mainImage={image2}
-        galleryImages={[image1, image3,image4]}
+        mainImage= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/Palm_Fruits_Image_u3wksg.jpg"
+        galleryImages={[
+          "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414779/palmfruits6_coo2mo.jpg",
+           "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383828/palmfruits3_fkfnhm.png",
+           "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383827/palmfruits4_obiash.png"]}
         title="Premuim Oil Palm Fruits"
         description="Our oil palm fruits are harvested at optimal 
         ripeness to ensure maximum oil content and quality. 

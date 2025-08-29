@@ -97,7 +97,7 @@ const myVideos = [
   "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756382064/video1_compressed_venkqj.mp4",
   "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374672/video2_cnnyui.mov",
   "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374682/video3_dbqvw4.mov",
-  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374672/video2_cnnyui.mov"
+  "https://res.cloudinary.com/dk95qi8q9/video/upload/v1756382063/video4_compressed_btudy2.mp4"
 ];
 
 
@@ -124,8 +124,7 @@ const myVideos = [
         />
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10 z-10"></div>
+      
     </div>
 
 
@@ -137,7 +136,7 @@ const myVideos = [
                 Farmer Ebelo Ltd.
               </span>
           </h1>
-          <p className="font-medium text-lg md:text-[23px] md:leading-[30px] text-white mt-6 max-w-5xl drop-shadow-[0_3px_5px_rgba(0,0,0,0.8)]">
+          <p className="font-medium text-lg md:text-[20px] md:leading-[30px] text-white mt-6 max-w-5xl drop-shadow-[0_3px_5px_rgba(0,0,0,0.8)]">
                 A leading oil palm plantation, rooted in the Heartbeat of the Nation, we bring you farm fresh palm produce, cultivated with care and delivered with heart.
           </p>
         </div>

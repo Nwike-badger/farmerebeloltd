@@ -1,21 +1,16 @@
 import React from 'react';
-import image1 from '../assets/palmfruits2.png'
 import image2 from '../assets/Vector 7.svg';
-import image3 from '../assets/Palm Fruits Image.png';
-import image4 from '../assets/palmoil4.png';
-import image5 from '../assets/palmfruitsoil.png'
-import image6 from '../assets/sludge.png'
-import image7 from '../assets/palmkernel.png';
+
 import OurProduceCards from '../components/OurProduceCards';
 
 const OurProduce = () => {
 
   const cards = [
-  { image: image3, text: 'Palm Fruits', link: '/our-produce/palm-fruits' },
-  { image: image4, text: 'Palm Oil', link: '/our-produce/palm-oil' }, 
-  { image: image7, text: 'Palm Cake', link: '/our-produce/palm-cake' },
-  { image: image5, text: 'Palm Kernel Oil', link: '/our-produce/palm-kernel-oil' },
-  { image: image6, text: 'Sludge', link: '/our-produce/sludge' },
+  { image: "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/Palm_Fruits_Image_u3wksg.jpg", text: 'Palm Fruits', link: '/our-produce/palm-fruits' },
+  { image: "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383835/palmoil4_iyiyj3.png", text: 'Palm Oil', link: '/our-produce/palm-oil' }, 
+  { image: "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/palmkernel_vy6fyh.png", text: 'Palm Cake', link: '/our-produce/palm-cake' },
+  { image: "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383840/palmfruitsoil_pitrsu.png", text: 'Palm Kernel Oil', link: '/our-produce/palm-kernel-oil' },
+  { image: "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/sludge_bbwstk.png", text: 'Sludge', link: '/our-produce/sludge' },
 ];
   
   return (
@@ -27,7 +22,7 @@ const OurProduce = () => {
   
             <div className="absolute inset-0  -z-10">
               <img
-                src={image1}
+                src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383842/palmfruits2_uucvk7.png"
                 alt="Background"
                 className="w-full h-[600px] md:h-full object-cover "
               
@@ -57,7 +52,7 @@ const OurProduce = () => {
 
               
               <p className="text-lg md:text-[23px] leading-relaxed md:leading-[32px] font-semibold max-w-3xl">
-                From our fields to your table, we grow grest, pesticde free palm and ensure it reaches you within 24 hours of harvest.
+                From our fields to your table, we grow great, pesticde free palm and ensure it reaches you within 24 hours of harvest.
               </p>
             </div>
     </section>
@@ -65,9 +60,9 @@ const OurProduce = () => {
 
     <section className=" py-12 md:py-16">
   {/* CHANGED: Using mobile-first padding, then restoring your desktop `px-19` value. */}
-          <div className="max-w-8xl mx-auto px-4 md:px-19">
+          <div className="max-w-8xl mx-auto px-4 md:px-21">
             {/* CHANGED: Using a larger gap on mobile/tablet, then restoring your tighter `gap-2` for the desktop layout. */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-2 justify-items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 justify-items-start">
               {cards.map((card, index) => (
                   <OurProduceCards
                     key={index}

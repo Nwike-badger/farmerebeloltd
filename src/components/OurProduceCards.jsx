@@ -8,7 +8,7 @@ const OurProduceCards = ({ image, text, link }) => {
       <img
         src={image}
         alt={text}
-        className="w-[320px] md:w-[425px] h-[350px] md:h-[350px] ms-6 md:ms-0 object-cover rounded-[10px] mb-4 bg-[#F9FAFB]"
+        className="w-[320px] md:w-[415px] h-[350px] md:h-[350px] ms-6 md:ms-0 object-cover rounded-[10px] mb-4 bg-[#F9FAFB]"
       />
       <p className="font-commissioner font-bold text-[17px] leading-[24px] text-black ">
         {text}

@@ -4,7 +4,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import MissionAndVisionCardWithImage from "../components/MissionAndVisionCardWithImage";
 import Footer from "../components/Footer";
 
-import image1 from '../assets/factory.png';
 import image2 from '../assets/Vector 7.svg';
 import image3 from '../assets/Vector(12).png';
 
@@ -40,7 +39,7 @@ const MissionAndVision = () => {
         />
 
         {/* Container with responsive padding */}
-        <div className="max-w-6xl mx-auto px-4 md:px-20 pt-32 md:pt-40">
+        <div className="max-w-6xl  px-4 md:px-20 pt-32 md:pt-40">
           {/* h5 with underline */}
           <div className="relative mb-10 w-fit">
             {/* Responsive font size */}

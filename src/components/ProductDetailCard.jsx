@@ -43,7 +43,7 @@ const ProductDetailCard = ({
           
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{title}</h2>
-            <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+            <p className="text-gray-600 text-[15px] leading-relaxed">{description}</p>
           </div>
 
           {/* Features */}
@@ -58,7 +58,7 @@ const ProductDetailCard = ({
                       alt={feature.text}
                       className="w-4 h-4 object-contain flex-shrink-0"
                     />
-                    <p className="text-gray-700">{feature.text}</p>
+                    <p className="text-gray-700 text-[15px]">{feature.text}</p>
                   </div>
                 ))}
               </div>
@@ -68,7 +68,7 @@ const ProductDetailCard = ({
           {/* Specs */}
           {specs.length > 0 && (
             <div>
-              <h4 className="text-lg font-semibold mb-4 md:text-xl md:mb-8">
+              <h4 className="text-lg font-semibold mb-4 md:text-xl md:mb-7">
                 Specifications
               </h4>
               <div
@@ -77,7 +77,7 @@ const ProductDetailCard = ({
                   md:bg-[#F9F9F9] md:p-8 md:rounded-2xl md:border-0
                 "
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 md:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 md:gap-8">
                   {specs.map((spec, idx) => (
                     <div
                       key={idx}
@@ -89,7 +89,7 @@ const ProductDetailCard = ({
                     >
                       <p
                         className="
-                          text-sm font-medium text-gray-500
+                          text-base font-medium text-gray-500
                           sm:font-extrabold sm:text-[#383838] sm:font-commissioner sm:w-1/2
                           md:w-auto
                         "
@@ -98,8 +98,8 @@ const ProductDetailCard = ({
                       </p>
                       <p
                         className="
-                          text-base font-semibold text-gray-800
-                          md:font-semibold md:font-commissioner md:text-[#383838]
+                          text-base  
+                           md:font-commissioner 
                         "
                       >
                         {spec.value}
