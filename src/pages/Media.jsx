@@ -1,6 +1,5 @@
 // Media.jsx
 import React from 'react';
-import { motion } from 'framer-motion'; // Import motion
 import MediaGallery from '../components/MediaGallery';
 
 const Media = () => {
@@ -22,30 +21,6 @@ const Media = () => {
     "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383830/govt_algh3q.png"
   ];
 
-  // Variants for the container to orchestrate staggered animations
-  const galleryContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1, // Each child will animate 0.1s after the previous one
-      },
-    },
-  };
-
-  // Variants for each individual gallery item
-  const galleryItemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
-
   return (
     <div className="w-full min-h-screen font-commissioner overflow-x-hidden">
       
@@ -57,32 +32,19 @@ const Media = () => {
           className="absolute inset-0 w-full h-full object-cover object-center -z-10"
         />
         <div className="px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-[32px] md:text-[45px] font-bold leading-[40px] md:leading-[48px] text-white max-w-3xl"
-          >
+          <h2 className="text-[32px] md:text-[45px] font-bold leading-[40px] md:leading-[48px] text-white max-w-3xl">
             Farmer Ebelo Gallery
-          </motion.h2>
+          </h2>
         </div>
       </section>
 
       {/* Gallery Section */}
       <section className="w-full bg-white py-12 md:py-20">
-        <motion.div
-          variants={galleryContainerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }} // Starts animation when 10% of the grid is visible
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-8 lg:px-21"
-        >
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 px-4 md:px-8 lg:px-21">
           {images.map((img, idx) => (
-            <motion.div key={idx} variants={galleryItemVariants}>
-              <MediaGallery image={img} />
-            </motion.div>
+            <MediaGallery key={idx} image={img} />
           ))}
-        </motion.div>
+        </div>
       </section>
       
     </div>

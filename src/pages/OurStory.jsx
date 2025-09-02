@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from "react-router-dom"; 
-import { motion } from "framer-motion";
 import image2 from '../assets/Vector 7.svg';
 import image3 from '../assets/founder.png';
 
@@ -41,14 +40,8 @@ const OurStory = () => {
       <section
         className="flex flex-col md:flex-row justify-between items-center max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4"
       >
-        {/* Text with slide-in */}
-        <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.9, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.7 }}
-          className="basis-full md:basis-[60%] text-center md:text-left"
-        >
+        {/* Text Section */}
+        <div className="basis-full md:basis-[60%] text-center md:text-left">
           <div className="text-2xl md:text-[47px] text-[#00994D] font-semibold font-commissioner mb-5">
             Our Story
           </div>
@@ -62,16 +55,10 @@ const OurStory = () => {
           <p className="text-base md:text-[22px] leading-relaxed md:leading-[32px] font-manrope font-medium text-[#383838] max-w-2xl mb-8 mx-auto md:mx-0">
             Driven by a zero-waste philosophy and a deep commitment to our community, we aim to create lasting value not just for our investors and partners, but for the people of Edo State. Guided by the solid leadership and vision of our founder, we grow with heart - for our people, for progress, and for Nigeria at large.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Image with curtain reveal */}
-        <motion.div
-          initial={{ clipPath: "inset(0 0 100% 0)" }}   // hidden (curtain down)
-          whileInView={{ clipPath: "inset(0 0 0% 0)" }} // reveal downwards
-          transition={{ duration: 1.9, ease: "easeInOut", delay: 0.3 }}
-          viewport={{ once: true, amount: 0.7 }}
-          className="basis-full md:basis-[35%] relative overflow-hidden rounded-xl shadow-lg"
-        >
+        {/* Image Section */}
+        <div className="basis-full md:basis-[35%] relative overflow-hidden rounded-xl shadow-lg">
           <img
             src={image3}
             alt="Our Chairman"
@@ -89,7 +76,7 @@ const OurStory = () => {
           >
             Meet Our Chairman
           </Link>
-        </motion.div>
+        </div>
       </section>
     </div>
   );
