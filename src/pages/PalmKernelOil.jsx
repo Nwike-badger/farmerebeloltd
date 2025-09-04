@@ -44,9 +44,9 @@ const PalmKernelOil = () => {
     { label: "Moisture Content", value: "<0.2%" },
   ]}
   buttonText="Contact for Pricing"
-  onButtonClick={() => (window.location.href = "/our-produce")}
-  // ✅ Override just for Palm Kernel
-  customSpecsClassName="flex-row items-center gap-2 whitespace-nowrap"
+  onButtonClick={() => (window.location.href = "/contact-us")}
+  
+  customSpecsClassName="flex items-center gap-2 whitespace-wrap md:whitespace-nowrap"
 />
 
     </div>

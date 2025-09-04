@@ -45,7 +45,7 @@ const PalmFruits = () => {
           { label: "Moisture Content", value: "12% - 15%" },
         ]}
         buttonText="Contact for Pricing"
-        onButtonClick={() => (window.location.href = "/our-produce")}
+        onButtonClick={() => (window.location.href = "/contact-us")}
       />
     </div>
      

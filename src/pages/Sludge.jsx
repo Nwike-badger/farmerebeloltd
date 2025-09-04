@@ -1,9 +1,9 @@
 // Media.jsx
 import React from 'react';
 import image5 from '../assets/Group(1).svg';
-import image6 from '../assets/Vector(5) (copy).svg';
-import image7 from '../assets/Group(2).svg';
-import image8 from '../assets/Group(1).svg';
+import image6 from '../assets/Group (another copy).svg';
+import image7 from '../assets/Group (copy).svg';
+import image8 from '../assets/Group(3).svg';
 
 import ProductDetailLayout from '../components/ProductDetailLayout';
 import ProductDetailCard from '../components/ProductDetailCard';
@@ -28,19 +28,19 @@ const Sludge = () => {
         title="High Quality Sludge"
         description="Our sludge is a by-product of palm oil processing, rich in nutrient and commonly used in animal feed, soap making, and biofuel production among others. The sludge at Farmer Ebelo provides industries with a reliable raw material without compromising quality."
         features={[
-          { icon: image5, text: "100% Organic" },
-          { icon: image6, text: "Fresh Harvest" },
-          { icon: image7, text: "Premium Quality" },
+          { icon: image5, text: "100% Natural" },
+          { icon: image6, text: "Nutrient Rich" },
+          { icon: image7, text: "Cost Effective Feed Solution" },
           { icon: image8, text: "Fast Delivery" },
         ]}
         specs={[
           { label: "Origin  ", value: "Edo State, Nigeria" },
-          { label: "HarvestPeriod", value: "Year-round" },
-          { label: "Oil Content", value: "18% - 22%" },
-          { label: "Moisture Content", value: "12% - 15%" },
+          { label: "Harvest Period", value: "Year-round" },
+          { label: "Fiber Content", value: "8% - 10%" },
+          { label: "Moisture Content", value: "10% - 15%" },
         ]}
-        buttonText="Back to Products"
-        onButtonClick={() => (window.location.href = "/our-produce")}
+        
+        onButtonClick={() => (window.location.href = "/contact-us")}
       />
     </div>
      

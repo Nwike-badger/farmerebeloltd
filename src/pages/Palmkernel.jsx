@@ -40,7 +40,7 @@ const PalmKernel = () => {
           { label: "Moisture Content", value: "10%" },
         ]}
         buttonText="Contact for Pricing"
-        onButtonClick={() => (window.location.href = "/our-produce")}
+        onButtonClick={() => (window.location.href = "/contact-us")}
       />
     </div>
      

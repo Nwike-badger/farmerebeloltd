@@ -175,7 +175,7 @@ const myVideos = [
           <div className={`w-full lg:w-[45%] transition-all duration-500 ${whoWeAreInView ? 'animate-fade-in-right' : 'opacity-0'}`}>
             <div className="flex flex-col justify-between lg:min-h-[500px]">
               <div>
-                <h2 className="text-3xl font-bold font-commissioner mb-6 text-[#00994D]">Who we are</h2>
+                <h2 className="text-2xl md:text-[37px] font-bold font-commissioner mb-6 text-[#00994D]">Who we are</h2>
                 <p className="text-base md:text-[22px] leading-relaxed mb-6">
                   At <span className='text-[#00994D]'>Farmer Ebelo Limited,</span> we are rooted in the rich agricultural heritage of the Heartbeat of the Nation - Edo State,
                    cultivating value from every part of the palm. From fresh palm fruits to premium palm kernel oil, palm kernel cake, and sludge, we process each product with care,
@@ -251,7 +251,7 @@ const myVideos = [
         {/* MODIFIED: Removed min-height, adjusted title to be centered and smaller on mobile, reduced overlay text size for mobile. */}
         <section>
           <div className="px-4 sm:px-5 py-12 mb-10">
-            <div className="text-3xl md:text-[40px] text-[#00994D] font-bold font-commissioner text-center md:text-left md:ms-15 mb-8">
+            <div className="text-2xl md:text-[37px] text-[#00994D] font-bold font-commissioner text-center md:text-left md:ms-15 mb-8">
               What We Produce
             </div>
             <div className="max-w-[82rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -305,7 +305,7 @@ const myVideos = [
           </p>
 
           <button
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => window.location.href = '/contact-us'}
             className="relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
               rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
               transition-all duration-700 ease-in-out hover:bg-gray-800 hover:scale-105"

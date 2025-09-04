@@ -8,7 +8,7 @@ const ProductDetailCard = ({
   description,
   features = [],
   specs = [],
-  buttonText = "Learn More",
+  buttonText = "Contact for Pricing",
   onButtonClick,
 
   // Defaults
@@ -17,24 +17,27 @@ const ProductDetailCard = ({
 
   // Optional overrides (only applied to the LAST gallery item/image)
   lastGalleryItemContainerClassName = "",
-  lastGalleryImageClassName = "",
+  galleryImageClassNames = [],
 
   // Specs override from before (unused here but kept for compatibility)
   customSpecsClassName = "",
 }) => {
   return (
     <div className="max-w-8xl mx-auto bg-white overflow-hidden">
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-stretch md:min-h-[600px]">
+
         {/* Left: Images */}
-        <div className="md:basis-1/2 flex-shrink-0">
+        <div className="md:basis-1/2 flex flex-col">
+
           <img
             src={mainImage}
             alt={title}
             className="w-full h-[300px] md:h-[450px] object-cover rounded-xl mb-4"
           />
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-3 mt-3">
             {galleryImages.map((img, idx) => {
               const isLast = idx === galleryImages.length - 1;
+              
               return (
                 <div
                   key={idx}
@@ -43,12 +46,10 @@ const ProductDetailCard = ({
                   }`}
                 >
                   <img
-                    src={img}
-                    alt={`Gallery ${idx + 1}`}
-                    className={`${galleryImageClassName} ${
-                      isLast ? lastGalleryImageClassName : ""
-                    }`}
-                  />
+                      src={img}
+                      alt={`Gallery ${idx + 1}`}
+                      className={`${galleryImageClassName} ${galleryImageClassNames[idx] || ""}`}
+                    />
                 </div>
               );
             })}
@@ -56,7 +57,8 @@ const ProductDetailCard = ({
         </div>
 
         {/* Right: Content */}
-        <div className="md:basis-1/2 flex flex-col gap-6 md:gap-6">
+        <div className="md:basis-1/2 flex flex-col justify-between gap-6 md:gap-6">
+
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{title}</h2>
             <p className="text-gray-600 text-[15px] leading-relaxed">{description}</p>
@@ -106,14 +108,14 @@ const ProductDetailCard = ({
                     >
                       <p
                         className="
-                          text-base font-medium text-gray-500
-                          sm:font-extrabold sm:text-[#383838] sm:font-commissioner sm:w-1/2
+                          text-base font-medium text-black
+                          sm:font-extrabold sm:text-black sm:font-commissioner sm:w-1/2
                           md:w-auto
                         "
                       >
                         {spec.label}:
                       </p>
-                      <p className="text-base md:font-commissioner">
+                      <p className="text-base md:font-commissioner text-gray-500">
                         {spec.value}
                       </p>
                     </div>
@@ -124,7 +126,7 @@ const ProductDetailCard = ({
           )}
 
           {/* Button */}
-          <div className="mt-auto pt-6">
+          <div className="pt-6">
             <button
               onClick={onButtonClick}
               className="flex items-center justify-center w-[180px] h-[45px] bg-black text-white font-semibold text-lg md:text-[18px] 

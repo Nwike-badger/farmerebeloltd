@@ -34,7 +34,7 @@ function Layout() {
 
 export default function App() {
   return (
-    <Router basename="/farmerebeloltd">
+    <Router>
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>

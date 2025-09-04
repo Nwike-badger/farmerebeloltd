@@ -26,7 +26,11 @@ const PalmOil = () => {
           // Base class for all thumbnails
           galleryImageClassName="object-contain max-w-full max-h-full mx-auto flex justify-center items-center"
           // ✅ Only the LAST thumbnail gets an extra top margin on mobile
-          lastGalleryImageClassName="mt-4 md:mt-0"
+          galleryImageClassNames={[
+            "",               // first image
+            "mt-4 md:mt-0",       // second image
+            "mt-8 md:mt-0 "    // third image
+          ]}
           title="High Quality Palm Oil"
           description="Our palm oil is carefully extracted from freshly harvested oil palm fruits, retaining its rich natural flavour, vibrant colour and high nutritional value. Processed under strict quality standards, it is the perfect choice for cooking, food production and industrial applications."
           features={[
@@ -42,7 +46,7 @@ const PalmOil = () => {
             { label: "Moisture Content", value: "0.2%" },
           ]}
           buttonText="Back to Products"
-          onButtonClick={() => (window.location.href = "/our-produce")}
+          onButtonClick={() => (window.location.href = "/contact-us")}
         />
       </div>
     </ProductDetailLayout>

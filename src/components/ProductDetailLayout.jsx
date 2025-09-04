@@ -18,14 +18,14 @@ const ProductDetailLayout = ({ image, title, subtitle, children }) => {
       </section>
 
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center ">
+      <section className="relative min-h-[40vh]  md:min-h-[60vh] flex items-center ">
         <img
           src={image}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover object-center -z-10 "
+          className="absolute inset-0 w-full h-full object-cover -z-10 "
         />
 
-        <div className="ms-20">
+        <div className="ms-12 md:ms-20">
           <h2 className="text-[37px] md:text-[50px] font-bold leading-[45px] md:leading-[53px]
              text-white max-w-3xl mb-5">
             {title}
