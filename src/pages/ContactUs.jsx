@@ -68,22 +68,44 @@ const ContactUs = () => {
 
       {/* Contact Section */}
       <section className="flex flex-col md:flex-row justify-between max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-10">
-        {/* Left Card */}
-        <div className="basis-full md:basis-[64%] flex flex-col">
-          <img
-            src="https://res.cloudinary.com/dk95qi8q9/image/upload/v1756383829/map_bzuspb.png"
-            alt="Close-up of freshly harvested palm fruits."
-            className="w-full max-h-[700px] rounded-2xl object-cover shadow-lg"
-          />
-          <div className="text-black mt-8">
-            <h2 className="text-2xl font-bold mb-6">For General Enquiries</h2>
-            <p className="text-lg mb-4 ">Call: <span className="hover:text-green-500">+234 807 678 8888</span></p>
-            <p className="text-lg mb-4 ">Email: <span className="hover:text-green-500">farmerebelo@gmail.com</span></p>
-            <p className="text-lg mb-4 ">
-              Address: <span className="hover:text-green-700">Plot 6, Ponuwei Ebelo Drive, Gbelebu, Edo State</span>
-            </p>
-          </div>
-        </div>
+{/* Left Card */}
+<div className="basis-full md:basis-[64%] flex flex-col">
+  <a
+    href="https://www.google.com/maps/dir/?api=1&destination=Farmer+Ebelo+Ltd,+6+Ponuwei+Ebelo+Drive,+Gbelebu"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://res.cloudinary.com/dk95qi8q9/image/upload/v1756383829/map_bzuspb.png"
+      alt="Google map showing Farmer Ebelo Ltd location"
+      className="w-full max-h-[700px] rounded-2xl object-cover shadow-lg cursor-pointer hover:opacity-90 transition"
+    />
+  </a>
+
+  <div className="text-black mt-8">
+    <h2 className="text-2xl font-bold mb-6">For General Enquiries</h2>
+    <p className="text-lg mb-4">
+      Call:{" "}
+      <span className="hover:text-green-700 hover:font-bold transition-colors duration-500 ease-in-out">
+        +234 807 678 8888
+      </span>
+    </p>
+    <p className="text-lg mb-4">
+      Email:{" "}
+      <span className="hover:text-green-700 hover:font-bold transition-colors duration-500 ease-in-out">
+        farmerebelo@gmail.com
+      </span>
+    </p>
+    <p className="text-lg mb-4">
+      Address:{" "}
+      <span className="hover:text-green-700 hover:font-bold transition-colors duration-500 ease-in-out">
+        Plot 6, Ponuwei Ebelo Drive, Gbelebu, Edo State
+      </span>
+    </p>
+  </div>
+</div>
+
+
 
         {/* Right Card (Form) */}
         <div className="basis-full md:basis-[35%]">
