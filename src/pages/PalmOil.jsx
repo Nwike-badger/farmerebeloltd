@@ -28,7 +28,7 @@ const PalmOil = () => {
           // ✅ Only the LAST thumbnail gets an extra top margin on mobile
           galleryImageClassNames={[
             "",               // first image
-            "mt-4 md:mt-0",       // second image
+            "mt-2 md:mt-0",       // second image
             "mt-8 md:mt-0 "    // third image
           ]}
           title="High Quality Palm Oil"
@@ -45,7 +45,7 @@ const PalmOil = () => {
             { label: "Free Fatty Acid", value: "<5%" },
             { label: "Moisture Content", value: "0.2%" },
           ]}
-          buttonText="Back to Products"
+          buttonText="Contact for Pricing"
           onButtonClick={() => (window.location.href = "/contact-us")}
         />
       </div>
