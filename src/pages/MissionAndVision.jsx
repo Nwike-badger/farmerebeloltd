@@ -120,8 +120,6 @@ const MissionAndVision = () => {
           </button>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

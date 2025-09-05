@@ -61,44 +61,42 @@ const HomePage = () => {
   const { ref: beginningsRef, inView: beginningsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const { ref: growthBadgeRef, inView: growthBadgeInView } = useInView({ triggerOnce: true, threshold: 0.8 });
   const { ref: whyChooseUsRef, inView: whyChooseUsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: cardsRef, inView: cardsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: cardsRef, inView: cardsInView } = useInView({ triggerOnce: true, threshold: 0.5 });
+  const { ref: produceRef, inView: produceInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
 
   const cardsData = [
-  {
-    icon: image15,
-    alt: "Icon for Experience",
-    title: "Rooted in Experience",
-    text: "With years of hands-on experience, we bring practical expertise...",
-    delay: "animate-fade-in-up",
-    offset: "-translate-y-[1px]" 
-  
-    
-  },
-  {
-    icon: image16,
-    alt: "Icon for Quality",
-    title: "Quality Assurance",
-    text: "From harvest to processing, we maintain rigorous quality control...",
-    delay: "animate-fade-in-up delay-200",
-    offset: "translate-y-[5px]" 
-  },
-  {
-    icon: image17,
-    alt: "Icon for Community",
-    title: "Built on Community",
-    text: "We believe growth is shared. From job creation to community empowerment...",
-    delay: "animate-fade-in-up delay-[400ms]",
-     
-  },
-];
+    {
+      icon: image15,
+      alt: "Icon for Experience",
+      title: "Rooted in Experience",
+      text: "With years of hands-on experience, we bring practical expertise...",
+      offset: "-translate-y-[1px]" 
+    },
+    {
+      icon: image16,
+      alt: "Icon for Quality",
+      title: "Quality Assurance",
+      text: "From harvest to processing, we maintain rigorous quality control...",
+      offset: "translate-y-[5px]" 
+    },
+    {
+      icon: image17,
+      alt: "Icon for Community",
+      title: "Built on Community",
+      text: "We believe growth is shared. From job creation to community empowerment...",
+    },
+  ];
 
-const myVideos = [
-  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756382064/video1_compressed_venkqj.mp4",
-  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374672/video2_cnnyui.mov",
-  "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374682/video3_dbqvw4.mov",
-  "https://res.cloudinary.com/dk95qi8q9/video/upload/v1756382063/video4_compressed_btudy2.mp4"
-];
+  // Helper for staggering card animations
+  const cardDelays = ['delay-0', 'delay-200', 'delay-[400ms]'];
+
+  const myVideos = [
+    "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756382064/video1_compressed_venkqj.mp4",
+    "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374672/video2_cnnyui.mov",
+    "https://res.cloudinary.com/dk95qi8q9/video/upload/f_auto,q_auto/v1756374682/video3_dbqvw4.mov",
+    "https://res.cloudinary.com/dk95qi8q9/video/upload/v1756382063/video4_compressed_btudy2.mp4"
+  ];
 
 
 
@@ -154,7 +152,7 @@ const myVideos = [
 
 
         
-        <section ref={partnersRef} className={`w-full bg-[#F7F7F7] py-10 lg:pt-12 lg:pb-4 transition-opacity duration-1000 ${partnersInView ? 'opacity-100' : 'opacity-0'}`}>
+        <section ref={partnersRef} className={`w-full bg-[#F7F7F7] py-10 lg:pt-12 lg:pb-4 transition-all duration-700 ease-out ${partnersInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
             <div className='items-center flex flex-col justify-center w-full text-black px-4'>
                 <p className="font-medium font-commissioner text-center text-lg md:text-[20px] md:leading-[30px] max-w-3xl drop-shadow-md mb-8 lg:mb-10">
                   We are supported by partners who believe in the value of local farming
@@ -172,7 +170,7 @@ const myVideos = [
         
         
         <section ref={whoWeAreRef} className="flex flex-wrap justify-center items-start w-full bg-[#E2FFEF] py-12 md:py-16 px-4 lg:ps-5 gap-8">
-          <div className={`w-full lg:w-[45%] transition-all duration-500 ${whoWeAreInView ? 'animate-fade-in-right' : 'opacity-0'}`}>
+          <div className={`w-full lg:w-[45%] transition-all duration-700 ease-out ${whoWeAreInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex flex-col justify-between lg:min-h-[500px]">
               <div>
                 <h2 className="text-2xl md:text-[37px] font-bold font-commissioner mb-6 text-[#00994D]">Who we are</h2>
@@ -199,10 +197,10 @@ const myVideos = [
           </div>
           
           <div
-                className={`relative w-full lg:w-[45%] mt-8 lg:mt-2 min-h-[300px] lg:min-h-[550px] flex justify-center items-center lg:items-start transition-all duration-500 delay-200 ${
-                  whoWeAreInView ? "animate-fade-in-up" : "opacity-0"
-                }`}
-              >
+            className={`relative w-full lg:w-[45%] mt-8 lg:mt-2 min-h-[300px] lg:min-h-[550px] flex justify-center items-center lg:items-start transition-all duration-700 ease-out delay-200 ${
+              whoWeAreInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
                 <img
                   src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756415724/staff4_z0tuof.png"
                   alt="Lush, green palm oil plantation..."
@@ -219,8 +217,8 @@ const myVideos = [
         
         </section>
 
-        {/* MODIFIED: Reduced vertical padding on mobile. */}
-        <section ref={beginningsRef} className={`flex flex-wrap justify-between items-center w-full bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-opacity duration-700 ${beginningsInView ? 'opacity-100' : 'opacity-0'}`}>
+        
+        <section ref={beginningsRef} className={`flex flex-wrap justify-between items-center w-full bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-all duration-700 ease-out ${beginningsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className='w-full lg:w-[40%]'>
               <h2 className="text-2xl md:text-3xl lg:text-4xl leading-tight lg:leading-[1.3] font-extrabold mb-6 text-black ">From humble beginnings in 2019 to thriving fields, we have harvested and processed over <span className='text-[#00994D]'>14,000</span> palm fruits.</h2>
           </div>
@@ -229,9 +227,9 @@ const myVideos = [
           </div>
         </section>
 
-        {/* MODIFIED: Reduced padding inside stat blocks for a better fit on mobile screens. */}
+        
         <section className='bg-white w-full pb-7'>
-          <div ref={growthBadgeRef} className={`px-4 py-2 mx-auto lg:mx-0 lg:ms-20 my-5 text-lg md:text-[1.375rem] bg-[#F9F9F9] text-[#00994D] rounded-2xl w-fit font-semibold transition-all duration-500 ${growthBadgeInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <div ref={growthBadgeRef} className={`px-4 py-2 mx-auto lg:mx-0 lg:ms-20 my-5 text-lg md:text-[1.375rem] bg-[#F9F9F9] text-[#00994D] rounded-2xl w-fit font-semibold transition-all duration-700 ease-out ${growthBadgeInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               Our Growth in Numbers
           </div>
 
@@ -248,49 +246,40 @@ const myVideos = [
           </div>
         </section>
 
-        {/* MODIFIED: Removed min-height, adjusted title to be centered and smaller on mobile, reduced overlay text size for mobile. */}
-        <section>
-          <div className="px-4 sm:px-5 py-12 mb-10">
-            <div className="text-2xl md:text-[37px] text-[#00994D] font-bold font-commissioner text-center md:text-left md:ms-15 mb-8">
-              What We Produce
+        
+        <section ref={produceRef} className={`transition-all duration-700 ease-out ${produceInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="px-4 sm:px-5 py-12 mb-10">
+          <div className="text-2xl md:text-[37px] text-[#00994D] font-bold font-commissioner text-center md:text-left md:ms-15 mb-8"> What We Produce </div>
+          <div className="max-w-[82rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+              <img src="https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/Palm_Fruits_Image_u3wksg.jpg" alt="Palm Fruits" className="w-full h-full object-cover"/>
+              <div className={`absolute top-0 left-0 w-full h-full bg-white origin-left transform transition-transform duration-700 ease-in-out ${produceInView ? 'scale-x-0' : 'scale-x-100'}`}></div>
+              <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"> <span className="text-white text-3xl md:text-4xl font-semibold">Palm Fruits</span> </div>
             </div>
-            <div className="max-w-[82rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              <div className="relative group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756414780/Palm_Fruits_Image_u3wksg.jpg" alt="Palm Fruits" className="w-full h-full object-cover"/>
-                <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-3xl md:text-4xl font-semibold">Palm Fruits</span>
+            <div className="grid grid-rows-2 gap-6">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="relative group w-full overflow-hidden rounded-2xl shadow-md">
+                  <img src="https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383840/palmfruitsoil_pitrsu.png" alt="Palm Kernel Oil" className="w-full h-full object-cover" />
+                  <div className={`absolute top-0 left-0 w-full h-full bg-white origin-left transform transition-transform duration-700 ease-in-out delay-200 ${produceInView ? 'scale-x-0' : 'scale-x-100'}`}></div>
+                  <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"> <span className="text-white text-2xl md:text-4xl font-semibold">Palm Kernel Oil</span> </div>
+                </div>
+                <div className="relative group w-full overflow-hidden rounded-2xl shadow-md">
+                  <img src="https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/sludge_bbwstk.png" alt="Sludge" className="w-full h-full object-cover" />
+                  <div className={`absolute top-0 left-0 w-full h-full bg-white origin-left transform transition-transform duration-700 ease-in-out delay-300 ${produceInView ? 'scale-x-0' : 'scale-x-100'}`}></div>
+                  <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"> <span className="text-white text-3xl md:text-4xl font-semibold">Sludge</span> </div>
                 </div>
               </div>
-
-              <div className="grid grid-rows-2 gap-6">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="relative group w-full overflow-hidden rounded-2xl shadow-md">
-                    <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383840/palmfruitsoil_pitrsu.png" alt="Palm Kernel Oil" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-white text-2xl md:text-4xl font-semibold">Palm Kernel Oil</span>
-                    </div>
-                  </div>
-                  <div className="relative group w-full overflow-hidden rounded-2xl shadow-md">
-                    <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/sludge_bbwstk.png" alt="Sludge" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-white text-3xl md:text-4xl font-semibold">Sludge</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative group overflow-hidden rounded-2xl shadow-md">
-                  <img src= "https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/palmkernel_vy6fyh.png" alt="Palm Kernel Cake" className="w-full h-full object-cover"/>
-                  <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white text-3xl md:text-4xl font-semibold">Palm Kernel Cake</span>
-                  </div>
-                </div>
+              <div className="relative group overflow-hidden rounded-2xl shadow-md">
+                <img src="https://res.cloudinary.com/dk95qi8q9/image/upload/f_auto,q_auto/v1756383839/palmkernel_vy6fyh.png" alt="Palm Kernel Cake" className="w-full h-full object-cover"/>
+                <div className={`absolute top-0 left-0 w-full h-full bg-white origin-left transform transition-transform duration-700 ease-in-out delay-500 ${produceInView ? 'scale-x-0' : 'scale-x-100'}`}></div>
+                <div className="absolute inset-0 bg-[#2B4939CC] flex items-center justify-center text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"> <span className="text-white text-3xl md:text-4xl font-semibold">Palm Kernel Cake</span> </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-{/* MODIFIED: Reduced vertical padding, margins and font sizes for a better mobile layout. Adjusted decorative image size and position for mobile. */}
+
         <section className="relative px-4 py-12 md:py-16 bg-[#E2FFEF] text-center mb-12 md:mb-20 overflow-hidden">
           <h4 className="text-2xl md:text-[32px] leading-none font-commissioner font-semibold text-[#00994D] mb-4">
             Partner with us
@@ -308,7 +297,7 @@ const myVideos = [
             onClick={() => window.location.href = '/contact-us'}
             className="relative z-20 w-[200px] h-[50px] bg-black text-white font-semibold text-lg md:text-[20px]
               rounded-tl-[10px] rounded-tr-[10px] rounded-bl-[10px] rounded-br-none
-              transition-all duration-700 ease-in-out hover:bg-gray-800 hover:scale-105"
+              transition-all duration-700 ease-in-out hover:bg-black hover:scale-105"
           >
             Contact Us
           </button>
@@ -321,10 +310,10 @@ const myVideos = [
         </section>
 
 
-      {/* MODIFIED: Used a new ref for intersection observer. Reduced padding and font sizes for mobile. */}
+      
       <section
           ref={whyChooseUsRef}
-          className={`flex flex-col md:flex-row justify-between items-center max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-opacity duration-700 ${whyChooseUsInView ? 'opacity-100' : 'opacity-0'}`}
+          className={`flex flex-col md:flex-row justify-between items-center max-w-[1568px] mx-auto bg-white py-12 md:py-16 px-4 md:px-8 lg:px-20 gap-12 lg:gap-4 transition-all duration-700 ease-out ${whyChooseUsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
         >
           <div className="basis-full md:basis-[54%] text-center md:text-left">
             <div className="text-2xl md:text-[37px] text-[#00994D] font-semibold font-commissioner mb-5">
@@ -356,29 +345,31 @@ const myVideos = [
           <div className="max-w-[1568px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {cardsData.map((card, index) => (
-          <HomepageCardWithIcon
-            key={index}
-            icon={card.icon}
-            alt={card.alt}
-            title={card.title}
-            text={card.text}
-            delay={cardsInView ? card.delay : "opacity-0"}
-            offset={card.offset}          
-          />
-        ))}
+                <div 
+                  key={index} 
+                  className={`transition-all duration-700 ease-out ${cardDelays[index]} ${cardsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                >
+                  <HomepageCardWithIcon
+                    icon={card.icon}
+                    alt={card.alt}
+                    title={card.title}
+                    text={card.text}
+                    offset={card.offset}          
+                  />
+                </div>
+              ))}
             </div>
           </div>
       </section>
 
 
-{/* MODIFIED: Fixed non-standard padding `px-18` and made it responsive. */}
     <section>
       <div>
         <VideoSlider videos={myVideos} />
       </div>
     </section>
 
-{/* MODIFIED: Fixed non-standard padding `px-18` and made it responsive. Added a gap on mobile. */}
+
 <section className="bg-white pb-5 px-4 md:px-8 lg:px-16">
   <div className="max-w-[1568px] mx-auto">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -399,7 +390,7 @@ const myVideos = [
   </div>
 </section>
 
-{/* MODIFIED: Reduced vertical padding and font sizes for mobile. Adjusted quote icon positioning to be less aggressive on medium screens. */}
+
 <section className="relative bg-white py-12 md:py-16 px-4 text-center">
   <img
     src={image22}
